@@ -5,11 +5,16 @@ import Card from './components/Card';
 
 function App() {
   const [movie, setMovie] = useState([])
+  let apiKey = process.env.REACT_APP_API_KEY;
+  console.log(apiKey);
+  console.log("hello");
+  
+  
   const getData = () =>{
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '60203c07d4msh049515770003155p1b0e34jsn7cb07bea9362',
+      'X-RapidAPI-Key':apiKey,
       'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
     }
   };
