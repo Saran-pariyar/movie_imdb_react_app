@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.parent-card-section {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #f7f8fc;
+    font-family: "Roboto", sans-serif;
+    color: #10182f;
+}
+
+.card-container {
+    display: flex;
+    width: 1140px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+}
+
+.card-header img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    min-height: 250px;
+}
+
+.tag {
+    background: #cccccc;
+    border-radius: 50px;
+    font-size: 12px;
+    margin: 0;
+    color: #fff;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.tag-teal {
+    background-color: #47bcd4;
+}
+
+.tag-purple {
+    background-color: #5e76bf;
+}
+
+.tag-pink {
+    background-color: #cd5b9f;
+}
+
+.card-body p {
+    font-size: 13px;
+    margin: 0 0 40px;
+}
+
+
+
+
+
+.visit-btn {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: #fff;
+    overflow: hidden;
+    border: 2px solid #4433ff;
+    color: #4433ff;
+}
+
+.visit-btn:hover {
+    color: #fff;
+}
+
+.visit-btn:hover:after {
+    width: 100%;
+}
+
+.visit-btn:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #4433ff;
+}
+
+.user {
+    display: flex;
+    margin-top: auto;
+}
+
+.user img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.user-info h5 {
+    margin: 0;
+}
+
+.user-info small {
+    color: #545d7a;
+}
+
+
+.prev_and_next_btn_section {
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid black; */
+    width: 80%;
+}
+
+.prev_and_next_btn_section button {
+    background-color: blue;
+    font-size: 1.2rem;
+    outline: none;
+    padding: .3rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
