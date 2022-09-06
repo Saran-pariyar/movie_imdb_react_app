@@ -1,37 +1,51 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import Card from './components/Card';
-
+import { useEffect, useState } from "react";
+import "./App.css";
+import Card from "./components/Card";
 
 function App() {
-  const [movie, setMovie] = useState([])
+  const [movie, setMovie] = useState([]);
+  const [endPoint, setEndPoint] = useState("thor");
+  // const [container , setContainer] = useState();
+  const [finalPoint, setFinalPoint] = useState("thor");
   let apiKey = process.env.REACT_APP_API_KEY;
-  console.log(apiKey);
-  console.log("hello");
-  
-  
-  const getData = () =>{
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key':apiKey,
-      'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
-    }
-  };
-  
-  fetch('https://imdb8.p.rapidapi.com/auto-complete?q=thor', options)
-    .then(response => response.json())
-    .then(response => setMovie(response.d))
-    .catch(err => console.error(err));
-    // setMovie(response)
-}
-useEffect(()=>{
-  getData();
-},[])
-console.log(movie);
+  // console.log(apiKey);
+  // console.log("hello");
 
+  useEffect(() => {
+
+  const getData = () => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": apiKey,
+        "X-RapidAPI-Host": "imdb8.p.rapidapi.com",
+      },
+    };
+
+    fetch(`https://imdb8.p.rapidapi.com/auto-complete?q=+${endPoint}`, options)
+      .then((response) => response.json())
+      .then((response) => setMovie(response.d))
+      .catch((err) => console.error(err));
+    // setMovie(response)
+  };
+    getData();
+  }, [finalPoint]);
+//this func will get data from the search input and save it to endPoint state var
+  const onChangeHandler = (e) => {
+    setEndPoint(e.target.value);
+  };
+  console.log(movie);
+//when we click the submit, the endPoint value will be assigned to final point and the document wil rerender with query
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    setFinalPoint(endPoint);
+  };
   return (
     <div className="App">
+      <form action="" onSubmit={onSubmitHandler}>
+        <input type="text" value={endPoint} onChange={onChangeHandler} />
+        <button type="submit">Submit</button>
+      </form>
       <Card movie={movie} />
     </div>
   );
