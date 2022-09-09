@@ -23,25 +23,22 @@ const Card = ({movie}) => {
                   <div class="card" key={index}>
                     <div class="card-header">
                       <img
-                        src={element.i.imageUrl}
+                        src={element.image.url}
                         alt="rover"
                       />
                     </div>
                     <div class="card-body">
                       <span class="tag tag-teal">{element.rank}</span>
-                      <h4>{element.l}</h4>
-                      <p>{element.qid}</p>
-                      <a href={element.url} target="_blank" className="visit-btn">
-                        Visit
-                      </a>
+                      <h4>{element.title}</h4>
+                      <p>{element.titleType}</p>
                       <div class="user">
                         <img
                           src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo"
                           alt="user"
                         />
                         <div class="user-info">
-                          <h5>{ element.rank ? element.rank : "Not found"}</h5>
-                          <small>{ element.q ? element.q : "Not found"}</small>
+                          <h5>{ element.year ? element.year : "Not found"}</h5>
+                          {/* <small>{ element.q ? element.q : "Not found"}</small> */}
                         </div>
                       </div>
                     </div>
