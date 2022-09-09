@@ -1,61 +1,30 @@
-import "../style/card.css"
+import React from 'react'
+
+const Card = ({movieArrayData}) => {
+const API_IMG="https://image.tmdb.org/t/p/w500/";
+
+  return (
+
+  
+    <div className="rounded overflow-hidden shadow-lg">
+      <img className="w-full" src={API_IMG + movieArrayData.poster_path} alt="Mountain" />
+      <div className="px-6 py-4">
+        <div className="font-bold text-xl mb-2">{movieArrayData.title}</div>
+        <p className="text-gray-700 text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+        </p>
+      </div>
+      <div className="px-6 pt-4 pb-2">
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+      </div>
+    </div>
+   
 
 
-/*
-i
-: 
-{height: 1100, imageUrl: 'https://m.media-amazon.com/images/M/MV5BMTQyNzAwOTUxOF5BMl5BanBnXkFtZTcwMTE0OTc5OQ@@._V1_.jpg', width: 770}
-id : "tt1981115"
-l :  "Thor: The Dark World"
-q :  "feature"
-qid : "movie"
-rank: 2010
 
-: 
-*/
-const Card = ({movie}) => {
-    return (
-        <section className="parent-card-section">
-          <div className="card-section">
-            <div class="card-container">
-              {movie.map((element, index) => {
-                return (
-                  <div class="card" key={index}>
-                    <div class="card-header">
-                      <img
-                        src={element.image.url}
-                        alt="rover"
-                      />
-                    </div>
-                    <div class="card-body">
-                      <span class="tag tag-teal">{element.rank}</span>
-                      <h4>{element.title}</h4>
-                      <p>{element.titleType}</p>
-                      <div class="user">
-                        <img
-                          src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo"
-                          alt="user"
-                        />
-                        <div class="user-info">
-                          <h5>{ element.year ? element.year : "Not found"}</h5>
-                          {/* <small>{ element.q ? element.q : "Not found"}</small> */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          {/* <div className="prev_and_next_btn_section">
-            <button disabled={page <= 1}>Previous</button>
-            <button disabled={page >= 1} onClick={nextPageBtn()}>
-              Next
-            </button>
-          </div> */}
-        </section>
-      );
-    };
-
+  )
+}
 
 export default Card

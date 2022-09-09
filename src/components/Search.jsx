@@ -1,8 +1,12 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { MovieContext } from '../Contexts/MovieContext'
 
 const Search = () => {
-  return (
-    <div>Search</div>
+  const contextData = useContext(MovieContext)
+    return (
+    <div>
+        {contextData.data}
+    </div>
   )
 }
 
