@@ -16,9 +16,10 @@ function App() {
   const [search, setSearch] = useState("")
 //api 
 const api_key = process.env.REACT_APP_API_KEY 
+const base_url = 'https://api.themoviedb.org/3/'
 // console.log(api_key);
 
-const API_URL=`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`;
+const API_URL=`${base_url}movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a`;
 
   useEffect(() => {
     fetch(API_URL)
@@ -27,7 +28,7 @@ const API_URL=`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`;
       // console.log(data);
       setMovie(data.results);
     })
-  }, [search])
+  }, [])
 
   return (
     <div className="App">

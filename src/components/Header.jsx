@@ -4,6 +4,7 @@ import {
     AiFillLinkedin,
     AiFillInstagram,
     AiFillGithub,
+    AiFillFacebook,
   } from "react-icons/ai/";
 
 const Header = () => {
@@ -24,6 +25,10 @@ const Header = () => {
           icon: AiFillGithub,
           href_link: "https://github.com/Saran-pariyar",
         },
+        {
+          icon: AiFillFacebook,
+          href_link :"https://www.facebook.com/saran.pariyar.50"
+        }
       ];
   return (
     <div className="header">
