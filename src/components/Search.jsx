@@ -16,7 +16,7 @@ const Search = () => {
   const onChangeHandler = (e) => {
     setQuery(e.target.value);
     //now the movie will be searched when we type..remove this one line and it will on search movie when we type
-    contextData.setEndpoint(`search/movie?api_key=d3129f18427d37c5012b4f4f64b1222a&query=${query}`)
+    // contextData.setEndpoint(`search/movie?api_key=d3129f18427d37c5012b4f4f64b1222a&query=${query}`)
 
   };
   return (
