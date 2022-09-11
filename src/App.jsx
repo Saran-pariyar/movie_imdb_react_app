@@ -16,6 +16,8 @@ function App() {
   const [search, setSearch] = useState("")
   //stores link data/the request that we want to send, it will contain link to search item or get movies
   const [endpoint, setEndpoint] = useState("movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a")
+  //the default value if popular movies and will be changed when we search or change categories
+  const [heading,setHeading] = useState('Popular movies : ')
 //api 
 const api_key = process.env.REACT_APP_API_KEY 
 const base_url = 'https://api.themoviedb.org/3/'
@@ -34,7 +36,7 @@ const API_URL=`${base_url}${endpoint}`;
 
   return (
     <div className="App">
-      <MovieContext.Provider value={{movie,setMovie,data,setData,search,setSearch,endpoint,setEndpoint}} >
+      <MovieContext.Provider value={{movie,setMovie,data,setData,search,setSearch,endpoint,setEndpoint,heading,setHeading}} >
       <Header />
       <Search />
       <Result />

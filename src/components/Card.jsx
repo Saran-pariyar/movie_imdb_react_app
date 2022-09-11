@@ -19,18 +19,17 @@ const Card = ({ movieArrayData }) => {
       />
     </div>
   );
+  const status = movieArrayData.poster_path && movieArrayData.poster_path != "";
 
   return (
     <div className="rounded overflow-hidden shadow-lg">
-      {!movieArrayData.poster_path ? (
-        loading_spinner
-      ) : (
-        <img
-          className="w-full"
-          src={API_IMG + movieArrayData.poster_path}
-          alt="movie poster"
-        />
-      )}
+      { 
+      // if(!movieArrayData.poster_path || movieArrayData.poster_path == "" ) { return loading_spinner} 
+      // else { return <img className="w-full" src=`API_IMG + movieArrayData.poster_path` alt="movie poster" />}
+      }
+      {
+        status ? (<img className="w-full" src={API_IMG + movieArrayData.poster_path} alt="movie poster" />) : loading_spinner
+      }
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{movieArrayData.title}</div>
         <p className="text-gray-700 text-base">

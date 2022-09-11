@@ -8,7 +8,8 @@ const Result = () => {
     
     const contextData = useContext(MovieContext)
   return (
-    
+    <>
+    <h2 className='text-center text-4xl bg-gray-900 p-1 text-white'>{contextData.heading}</h2>
   <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
 
 {contextData.movie ? contextData.movie.map((element)=>{
@@ -19,6 +20,7 @@ return (
 )
 }) : "Ruko jara sabar karo "}
     </div>
+    </>
   )
 }
 

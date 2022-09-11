@@ -10,7 +10,7 @@ const Search = () => {
   const onSearchSubmit = (e) => {
     e.preventDefault();
     contextData.setEndpoint(`search/movie?api_key=d3129f18427d37c5012b4f4f64b1222a&query=${query}`)
-
+contextData.setHeading("Results for :" + query)
   };
   //when we type input in search section
   const onChangeHandler = (e) => {
@@ -22,8 +22,7 @@ const Search = () => {
   return (
     <div className="p-4 sm:px-4">
       {/* {contextData.data} */}
-      <h1 className=" text-3xl text-center mt-0 mb-2 ">Search your favorite film : </h1>
-
+      {/* <h1 className=" text-3xl text-center mt-0 mb-2 ">Search your favorite film : </h1> */}
       <form onSubmit={onSearchSubmit}>
         <label
           htmlFor="default-search"
