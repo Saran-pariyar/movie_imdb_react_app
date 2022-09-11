@@ -6,6 +6,7 @@ import {
     AiFillGithub,
     AiFillFacebook,
   } from "react-icons/ai/";
+  import { Link } from "react-router-dom";
 
 const Header = () => {
     const social_links = [
@@ -33,8 +34,8 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-container">
-        <a href="/" className="left-section font1-5">Home</a>
-        <p className="middle-section font1-5">Saran Pariyar</p>
+        <Link to="/" className="left-section font1-5">Home</Link>
+        <Link to="/explore" className="middle-section font1-5 cursor-pointer" >Explore Movies</Link>
         <div className="right-section font1-5">
         <p className="find-me-text">Find me : </p>
           {social_links.map((element, index) => {

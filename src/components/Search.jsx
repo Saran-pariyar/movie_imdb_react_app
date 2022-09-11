@@ -48,6 +48,7 @@ contextData.setHeading("Results for :" + query)
           </button>
         </div>
       </form>
+      
     </div>
   );
 };

@@ -1,13 +1,17 @@
 import "./App.css";
 import Header from "./components/Header";
 import "@fontsource/poppins";
-import PopularMovie from "./components/PopularMovie";
 import Search from "./components/Search";
 import Result from "./components/Result";
 // import Card from "./components/Card";
 import { MovieContext } from "./Contexts/MovieContext";
 import { useState,useEffect } from "react";
-import Card from "./components/Card";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Explore from "./components/Explore";
 
 function App() {
   //contains array of the movie result
@@ -37,10 +41,17 @@ const API_URL=`${base_url}${endpoint}`;
   return (
     <div className="App">
       <MovieContext.Provider value={{movie,setMovie,data,setData,search,setSearch,endpoint,setEndpoint,heading,setHeading}} >
+
+      <BrowserRouter>
       <Header />
-      <Search />
-      <Result />
+      <Routes>
+      {/* <Search />
+      <Result /> */}
+      <Route exact path="/" element={<><Search/><Result/></>} />
+      <Route exact path="/explore" element={<Explore />} />
+      </Routes>
       {/* <Card /> */}
+      </BrowserRouter>
       </MovieContext.Provider>
     </div>
   );
