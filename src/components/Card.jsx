@@ -1,19 +1,51 @@
 import React from "react";
+import { FidgetSpinner } from "react-loader-spinner";
 
 const Card = ({ movieArrayData }) => {
   const API_IMG = "https://image.tmdb.org/t/p/w500/";
+  const loading_spinner = ( <div className="flex justify-center">
+  <FidgetSpinner
+    visible={true}
+    height="80"
+    width="80"
+    ariaLabel="dna-loading"
+    wrapperStyle={{}}
+    wrapperClass="dna-wrapper"
+    ballColors={["#ff0000", "#00ff00", "#0000ff"]}
+    backgroundColor="#F4442E"
+    className=""
+  />
+</div>)
 
   return (
     <div className="rounded overflow-hidden shadow-lg">
+      {!movieArrayData.poster_path ?  (
+        // <div className="flex justify-center">
+        //   <FidgetSpinner
+        //     visible={true}
+        //     height="80"
+        //     width="80"
+        //     ariaLabel="dna-loading"
+        //     wrapperStyle={{}}
+        //     wrapperClass="dna-wrapper"
+        //     ballColors={["#ff0000", "#00ff00", "#0000ff"]}
+        //     backgroundColor="#F4442E"
+        //     className=""
+        //   />
+        // </div>
+        loading_spinner
+      )
+    :(
       <img
         className="w-full"
         src={API_IMG + movieArrayData.poster_path}
-        alt="Mountain"
+        alt="movie poster"
       />
+    ) }
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{movieArrayData.title}</div>
         <p className="text-gray-700 text-base">
-          {movieArrayData.overview.slice(0, 147) + "... "}
+          {!movieArrayData ?  loading_spinner : movieArrayData.overview.slice(0, 147) + "... "}
         </p>
       </div>
       <div className="px-6 pt-4 pb-2">
