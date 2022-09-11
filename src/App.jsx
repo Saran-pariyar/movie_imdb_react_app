@@ -14,12 +14,14 @@ function App() {
   const [movie, setMovie] = useState([])
   const [data, setData] = useState('nothing')
   const [search, setSearch] = useState("")
+  //stores link data/the request that we want to send, it will contain link to search item or get movies
+  const [endpoint, setEndpoint] = useState("movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a")
 //api 
 const api_key = process.env.REACT_APP_API_KEY 
 const base_url = 'https://api.themoviedb.org/3/'
 // console.log(api_key);
 
-const API_URL=`${base_url}movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a`;
+const API_URL=`${base_url}${endpoint}`;
 
   useEffect(() => {
     fetch(API_URL)
@@ -28,11 +30,11 @@ const API_URL=`${base_url}movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a
       // console.log(data);
       setMovie(data.results);
     })
-  }, [])
+  }, [endpoint])
 
   return (
     <div className="App">
-      <MovieContext.Provider value={{movie,setMovie,data,setData,search,setSearch}} >
+      <MovieContext.Provider value={{movie,setMovie,data,setData,search,setSearch,endpoint,setEndpoint}} >
       <Header />
       <Search />
       <Result />

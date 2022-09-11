@@ -9,18 +9,15 @@ const Search = () => {
   //func when we submit form
   const onSearchSubmit = (e) => {
     e.preventDefault();
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=d3129f18427d37c5012b4f4f64b1222a&query=${query}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        contextData.setMovie(data.results);
-      });
+    contextData.setEndpoint(`search/movie?api_key=d3129f18427d37c5012b4f4f64b1222a&query=${query}`)
+
   };
   //when we type input in search section
   const onChangeHandler = (e) => {
     setQuery(e.target.value);
+    //now the movie will be searched when we type 
+    contextData.setEndpoint(`search/movie?api_key=d3129f18427d37c5012b4f4f64b1222a&query=${query}`)
+
   };
   return (
     <div className="p-4 sm:px-4">
