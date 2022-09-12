@@ -14,7 +14,6 @@ const Explore = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setGenres(data.genres);
       });
   }, []);
@@ -25,7 +24,6 @@ const Explore = () => {
     );
     setShowResult(true);
     contextData.setHeading("Category : " + name);
-    console.log(id);
   };
   return (
     <section className="explore m-3">

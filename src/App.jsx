@@ -47,7 +47,10 @@ const API_URL=`${base_url}${endpoint}`;
       <Routes>
       {/* <Search />
       <Result /> */}
-      <Route exact path="/" element={<><Search/><Result/></>} />
+      <Route index element={<><Search/><Result/></>} />
+      <Route  path="/" element={<><Search/><Result/></>} />
+      <Route  exact path="/" element={<><Search/><Result/></>} />
+      <Route  exact path="" element={<><Search/><Result/></>} />
       <Route exact path="/explore" element={<Explore />} />
       </Routes>
       {/* <Card /> */}
