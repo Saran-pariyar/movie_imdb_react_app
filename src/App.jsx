@@ -53,7 +53,7 @@ const API_URL=`${base_url}${endpoint}`;
       <Route path="/"  element={<><Search/><Result/></>} />
       {/* this /movie_imdb_react_app  path works when we're in home  */}
       <Route  path="/movie_imdb_react_app" element={<><Search/><Result/></>} />
-      <Route exact path="/explore" element={<Explore />} />
+      <Route exact path="/explore" element={ <Explore /> } />
       <Route exact path="/about" element={<About />} />
 
       </Routes>

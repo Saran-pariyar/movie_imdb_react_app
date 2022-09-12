@@ -28,19 +28,21 @@ const Explore = () => {
   return (
     <section className="explore m-3">
       <h1 className="m-4 text-3xl">Categories </h1> 
-      <div className="overflow-x-scroll h-24 flex  items-center  border px-2 sm:block sm:h-auto sm:overflow-x-visible sm:border-none">
-      {genres.map((element) => {
+      <div className="overflow-x-scroll h-32  flex  items-center  border px-2 sm:block sm:h-auto sm:overflow-x-visible sm:border-none bg-red-500 sm:bg-white">
+      {genres.map((element,index) => {
         return (
+          <>
           <button
             onClick={() => {
               onClickHandler(element.id, element.name);
             }}
             key={element.id}
-            className="text-slate-500 border w-auto border-slate-500 hover:bg-slate-500 hover:text-white active:bg-slate-600 font-bold uppercase px-7 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            className="  text-slate-500 border bg-white border-slate-500 hover:bg-slate-500 hover:text-white active:bg-slate-600 font-bold uppercase px-7 py-3 rounded-full outline-none focus:outline-none mr-1  ease-linear transition-all duration-150 sm:mb-4"
             type="button"
           >
             {element.name}
           </button>
+          </>
         );
       })}
       </div>
