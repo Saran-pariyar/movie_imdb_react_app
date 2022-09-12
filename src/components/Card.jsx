@@ -8,8 +8,8 @@ const Card = ({ movieArrayData }) => {
     <div className="flex justify-center">
       <FidgetSpinner
         visible={true}
-        height="80"
-        width="80"
+        height="360"
+        width="160"
         ariaLabel="dna-loading"
         wrapperStyle={{}}
         wrapperClass="dna-wrapper"

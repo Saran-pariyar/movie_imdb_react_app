@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import "@fontsource/poppins";
 import Search from "./components/Search";
 import Result from "./components/Result";
-// import Card from "./components/Card";
 import { MovieContext } from "./Contexts/MovieContext";
 import { useState,useEffect } from "react";
 import {
@@ -14,7 +13,6 @@ import {
 import Explore from "./components/Explore";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
-import Pagination from "./components/Pagination";
 import BackToTop from "./components/BackToTop";
 
 function App() {
@@ -25,7 +23,7 @@ function App() {
   //stores link data/the request that we want to send, it will contain link to search item or get movies
   const [endpoint, setEndpoint] = useState("movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a")
   //the default value if popular movies and will be changed when we search or change categories
-  const [heading,setHeading] = useState('Popular movies : ')
+  const [heading,setHeading] = useState('Popular movies  ')
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
 //api 
@@ -66,7 +64,6 @@ const API_URL=`${base_url}${endpoint}&page=${page}`;
       </Routes>
       {/* <Card /> */}
       </BrowserRouter>
-      <Pagination />
       </MovieContext.Provider>
       <BackToTop />
     </div>

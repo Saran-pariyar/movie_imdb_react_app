@@ -27,13 +27,17 @@ const Pagination = () => {
     }
   return (
     <>
-      <div class="flex justify-around m-4">
-  <button onClick={prevPage} class="p-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-8 rounded-l">
+      <div class="flex justify-around m-4 text-base sm:text-2xl">
+  <button  onClick={prevPage} class="p-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 sm:px-8 rounded-l">
     Prev
   </button>
-  <button onClick={nextPage} class="p-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-8 rounded-r">
+  <button class=" p-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 sm:px-8 rounded-r">
+    Page : {page}/{totalPages}
+  </button>
+  <button onClick={nextPage} class="p-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 sm:px-8 rounded-r">
     Next
   </button>
+  
 </div>
       
       </>

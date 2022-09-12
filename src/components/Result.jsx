@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { MovieContext } from "../Contexts/MovieContext";
 import Card from "./Card";
 import { FidgetSpinner } from "react-loader-spinner";
+import Pagination from "./Pagination";
+
 
 const Result = () => {
   const loading_spinner = (
@@ -42,6 +44,7 @@ const Result = () => {
           })
         )}
       </div>
+      <Pagination />
     </>
   );
 };
