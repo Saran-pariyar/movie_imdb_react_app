@@ -24,12 +24,13 @@ const Explore = () => {
     );
     setShowResult(true);
     contextData.setHeading("Category : " + name);
+    contextData.setPage(1)
   };
   return (
     <section className="explore m-3">
       <h1 className="m-4 text-3xl">Categories </h1> 
       <div className="overflow-x-scroll h-32  flex  items-center  border px-2 sm:block sm:h-auto sm:overflow-x-visible sm:border-none bg-red-500 sm:bg-white">
-      {genres.map((element,index) => {
+      {genres.map((element) => {
         return (
           <>
           <button

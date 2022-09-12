@@ -11,6 +11,8 @@ const Search = () => {
     e.preventDefault();
     contextData.setEndpoint(`search/movie?api_key=d3129f18427d37c5012b4f4f64b1222a&query=${query}`)
 contextData.setHeading("Results for :" + query)
+//we will set page value to one when we submit new search query
+contextData.setPage(1)
   };
   //when we type input in search section
   const onChangeHandler = (e) => {
