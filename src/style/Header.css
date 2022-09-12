@@ -21,10 +21,11 @@
     
     } */
     .find-me-text{
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     .right-section{
         display: flex;
+        align-items: center;
     }
     .right-section .social-links{
         color: white;

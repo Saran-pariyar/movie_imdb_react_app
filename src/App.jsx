@@ -12,6 +12,8 @@ import {
   Route,
 } from "react-router-dom";
 import Explore from "./components/Explore";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
 
 function App() {
   //contains array of the movie result
@@ -44,6 +46,7 @@ const API_URL=`${base_url}${endpoint}`;
 
       <BrowserRouter>
       <Header />
+      <Navbar />
       <Routes>
       {/* <Search />
       <Result /> */}
@@ -51,6 +54,8 @@ const API_URL=`${base_url}${endpoint}`;
       {/* this /movie_imdb_react_app  path works when we're in home  */}
       <Route  path="/movie_imdb_react_app" element={<><Search/><Result/></>} />
       <Route exact path="/explore" element={<Explore />} />
+      <Route exact path="/about" element={<About />} />
+
       </Routes>
       {/* <Card /> */}
       </BrowserRouter>
