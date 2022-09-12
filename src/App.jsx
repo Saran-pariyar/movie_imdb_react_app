@@ -15,6 +15,7 @@ import Explore from "./components/Explore";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Pagination from "./components/Pagination";
+import BackToTop from "./components/BackToTop";
 
 function App() {
   //contains array of the movie result
@@ -67,6 +68,7 @@ const API_URL=`${base_url}${endpoint}&page=${page}`;
       </BrowserRouter>
       <Pagination />
       </MovieContext.Provider>
+      <BackToTop />
     </div>
   )
     }

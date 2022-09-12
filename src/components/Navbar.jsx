@@ -66,13 +66,13 @@ const goToHome = ()=>{
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <li className="text-gray-600 hover:text-blue-600">
-                            <Link to="/" className="text-black" onClick={goToHome}>Home</Link>
+                            <Link to="/" className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white" onClick={goToHome}>Home</Link>
                             </li>
                             <li className="text-gray-600 hover:text-blue-600">
-                            <Link to="/explore" className="text-black" >Explore Movies</Link>
+                            <Link to="/explore" className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white" >Explore Movies</Link>
                             </li>
                             <li className="text-gray-600 hover:text-blue-600">
-                                <Link to="/about" className="text-black">About</Link>
+                                <Link to="/about" className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white">About</Link>
                             </li>
                         </ul>
                     </div>
