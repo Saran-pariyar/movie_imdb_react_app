@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import profile_pic from '../style/prof.jpeg'
 
 const About = () => {
   const concepts = [
@@ -9,6 +11,7 @@ const About = () => {
     "Reusing code/components",
     "Using EndPoints in API calls",
   ];
+  let navigate = useNavigate();
   return (
     <>
       <section className="text-gray-900 body-font scroll-smooth">
@@ -16,8 +19,8 @@ const About = () => {
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-7">
             <img
               className="object-cover object-center rounded"
-              alt="hero"
-              src="https://dummyimage.com/720x600"
+              alt="Profile picture"
+              src={profile_pic}
             />
           </div>
           <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
@@ -76,7 +79,7 @@ const About = () => {
               );
             })}
           </div>
-          <button className="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
+          <button onClick={()=>{navigate('/contact')}} className="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
             Reach me out!
           </button>
         </div>
