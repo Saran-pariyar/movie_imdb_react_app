@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/movie_imdb_react_app/static/css/main.be350edd.css",
-    "main.js": "/movie_imdb_react_app/static/js/main.b9769fd3.js",
+    "main.css": "/movie_imdb_react_app/static/css/main.953d804a.css",
+    "main.js": "/movie_imdb_react_app/static/js/main.1740dd57.js",
     "static/media/poppins-all-400-normal.woff": "/movie_imdb_react_app/static/media/poppins-all-400-normal.6fbfdac99c274b77fe96.woff",
     "static/media/prof.jpeg": "/movie_imdb_react_app/static/media/prof.503efd0f1689b7e8dd51.jpeg",
     "static/media/poppins-devanagari-400-normal.woff2": "/movie_imdb_react_app/static/media/poppins-devanagari-400-normal.64d5f06ee726edd58ca3.woff2",
     "static/media/poppins-latin-400-normal.woff2": "/movie_imdb_react_app/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
     "static/media/poppins-latin-ext-400-normal.woff2": "/movie_imdb_react_app/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/movie_imdb_react_app/index.html",
-    "main.be350edd.css.map": "/movie_imdb_react_app/static/css/main.be350edd.css.map",
-    "main.b9769fd3.js.map": "/movie_imdb_react_app/static/js/main.b9769fd3.js.map"
+    "main.953d804a.css.map": "/movie_imdb_react_app/static/css/main.953d804a.css.map",
+    "main.1740dd57.js.map": "/movie_imdb_react_app/static/js/main.1740dd57.js.map"
   },
   "entrypoints": [
-    "static/css/main.be350edd.css",
-    "static/js/main.b9769fd3.js"
+    "static/css/main.953d804a.css",
+    "static/js/main.1740dd57.js"
   ]
 }
