@@ -11,11 +11,16 @@ const Navbar = () => {
     contextData.setEndpoint(
       "movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a"
     );
-    contextData.setHeading("Popular Movies: ");
+    contextData.setHeading("Popular movies");
+  };
+
+  //close navbar when we click nav-link
+  const closeNav = () => {
+    setNavbar(!navbar);
   };
 
   return (
-    <nav className="w-full bg-white shadow">
+    <nav className="w-full bg-dark shadow">
       <div className="text-xl justify-between px-3 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -81,6 +86,7 @@ const Navbar = () => {
               <li className="text-gray-600 hover:text-blue-600">
                 <Link
                   to="/explore"
+                  onClick={closeNav}
                   className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white"
                 >
                   Explore Movies
@@ -89,6 +95,7 @@ const Navbar = () => {
               <li className="text-gray-600 hover:text-blue-600">
                 <Link
                   to="/about"
+                  onClick={closeNav}
                   className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white"
                 >
                   About

@@ -4,7 +4,6 @@ import Card from "./Card";
 import { FidgetSpinner } from "react-loader-spinner";
 import Pagination from "./Pagination";
 
-
 const Result = () => {
   const loading_spinner = (
     <div className="flex justify-center ">
@@ -23,7 +22,6 @@ const Result = () => {
   );
 
   const contextData = useContext(MovieContext);
-  console.log(contextData.movie);
 
   return (
     <>
@@ -39,7 +37,6 @@ const Result = () => {
           </>
         ) : (
           contextData.movie.map((element) => {
-            // console.log(element.title );
             return <Card key={element.id} movieArrayData={element} />;
           })
         )}
@@ -50,25 +47,3 @@ const Result = () => {
 };
 
 export default Result;
-
-// {
-//     "adult": false,
-//     "backdrop_path": "/xVbppM1xgbskOKgOuV8fbWBWHtt.jpg",
-//     "genre_ids": [
-//         27,
-//         9648,
-//         878,
-//         53
-//     ],
-//     "id": 762504,
-//     "original_language": "en",
-//     "original_title": "Nope",
-//     "overview": "Residents in a lonely gulch of inland California bear witness to an uncanny, chilling discovery.",
-//     "popularity": 1849.106,
-//     "poster_path": "/AcKVlWaNVVVFQwro3nLXqPljcYA.jpg",
-//     "release_date": "2022-07-20",
-//     "title": "Nope",
-//     "video": false,
-//     "vote_average": 7.1,
-//     "vote_count": 1278
-// },

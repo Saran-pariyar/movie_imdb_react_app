@@ -1,9 +1,10 @@
 import React from "react";
 import { FidgetSpinner } from "react-loader-spinner";
+import { AiFillStar } from "react-icons/ai";
 
 const Card = ({ movieArrayData }) => {
   const API_IMG = "https://image.tmdb.org/t/p/w500";
-  
+
   const loading_spinner = (
     <div className="flex justify-center">
       <FidgetSpinner
@@ -23,13 +24,19 @@ const Card = ({ movieArrayData }) => {
 
   return (
     <div className="rounded overflow-hidden shadow-lg">
-      { 
-      // if(!movieArrayData.poster_path || movieArrayData.poster_path == "" ) { return loading_spinner} 
-      // else { return <img className="w-full" src=`API_IMG + movieArrayData.poster_path` alt="movie poster" />}
-      }
       {
-        status ? (<img className="w-full" src={API_IMG + movieArrayData.poster_path} alt="movie poster" />) : loading_spinner
+        // if(!movieArrayData.poster_path || movieArrayData.poster_path == "" ) { return loading_spinner}
+        // else { return <img className="w-full" src=`API_IMG + movieArrayData.poster_path` alt="movie poster" />}
       }
+      {status ? (
+        <img
+          className="w-full"
+          src={API_IMG + movieArrayData.poster_path}
+          alt="movie poster"
+        />
+      ) : (
+        loading_spinner
+      )}
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{movieArrayData.title}</div>
         <p className="text-gray-700 text-base">
@@ -51,7 +58,8 @@ const Card = ({ movieArrayData }) => {
           ""
         )}
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          Ratings : {movieArrayData.vote_average}
+          <AiFillStar className="text-amber-400 inline text-xl" /> Ratings :{" "}
+          {movieArrayData.vote_average}
         </span>
       </div>
     </div>
