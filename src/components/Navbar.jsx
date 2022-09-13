@@ -101,6 +101,15 @@ const Navbar = () => {
                   About
                 </Link>
               </li>
+              <li className="text-gray-600 hover:text-blue-600">
+                <Link
+                  to="/contact"
+                  onClick={closeNav}
+                  className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

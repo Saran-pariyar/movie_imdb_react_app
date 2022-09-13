@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai/";
 
 const Header = () => {
-  const social_links = [
+  const  social_links = [
     {
       icon: AiOutlineTwitter,
       href_link: "https://twitter.com/saran_pariyar1",
@@ -55,5 +55,6 @@ const Header = () => {
     </div>
   );
 };
+
 
 export default Header;

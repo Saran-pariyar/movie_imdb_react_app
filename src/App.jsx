@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import BackToTop from "./components/BackToTop";
 import Error from "./components/Error";
+import Contact from "./components/Contact";
 
 function App() {
   //contains array of the movie result
@@ -86,7 +87,9 @@ function App() {
             />
             <Route exact path="/explore" element={<Explore />} />
             <Route exact path="/about" element={<About />} />
+            <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/*" element={<Error />} />
+
 
           </Routes>
           {/* <Card /> */}
