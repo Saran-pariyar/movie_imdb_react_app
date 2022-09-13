@@ -12,6 +12,8 @@ import About from "./components/About";
 import BackToTop from "./components/BackToTop";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import MovieDetail from "./components/MovieDetail";
 
 function App() {
   //contains array of the movie result
@@ -42,7 +44,8 @@ function App() {
 
   return (
     <div className="App">
-      <MovieContext.Provider
+      <div className="min-h-screen ">
+      <MovieContext.Provider 
         value={{
           movie,
           setMovie,
@@ -60,7 +63,7 @@ function App() {
           setTotalPages,
         }}
       >
-        <BrowserRouter>
+        <BrowserRouter >
           <Header />
           <Navbar />
           <Routes>
@@ -88,7 +91,9 @@ function App() {
             <Route exact path="/explore" element={<Explore />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/contact" element={<Contact />} />
+            <Route exact path="/movie_detail" element={<MovieDetail />} />
             <Route exact path="/*" element={<Error />} />
+
 
 
           </Routes>
@@ -96,6 +101,8 @@ function App() {
         </BrowserRouter>
       </MovieContext.Provider>
       <BackToTop />
+      </div>
+      <Footer />
     </div>
   );
 }

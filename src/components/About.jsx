@@ -11,9 +11,9 @@ const About = () => {
     "Reusing code/components",
     "Using EndPoints in API calls",
   ];
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <>
+    < >
       <section className="text-gray-900 body-font scroll-smooth">
         <div className="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-7">
@@ -29,7 +29,7 @@ const About = () => {
               <br className="hidden lg:inline-block" />
               <span className="text-blue-700 font-bold "> Saran Pariyar</span>
             </h1>
-            <p className="mb-8 leading-relaxed">
+            <p className="mb-8 leading-relaxed text-xl">
               I'm a self-taught developer from Nepal. I've been working with
               frontend development for more than 1 and a half year and love to
               work in frontend. I am making this project to improve my ReactJS
@@ -38,7 +38,7 @@ const About = () => {
             <div className="flex justify-center">
               <a
                 href="#learned_concepts"
-                className="inline-flex text-white bg-blue-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                className="inline-flex text-white bg-blue-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg "
               >
                 Learnings from this project
               </a>
@@ -48,10 +48,10 @@ const About = () => {
       </section>
 
       {/* learned concepts  */}
-      <section className="text-gray-600 body-font" id="learned_concepts">
+      <section className="text-gray-600 body-font " id="learned_concepts">
         <div className="container px-5 py-24 mx-auto">
           <div className="text-center mb-20">
-            <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
+            <h1 className="sm:text-3xl text-2xl font-bold  text-center title-font text-gray-900 mb-4">
               I learned a lot of ReactJS concepts while working on this project,{" "}
               <br /> some of them are :
             </h1>
