@@ -1,4 +1,4 @@
-import "../style/Header.css";
+import "../assets/Header.css";
 import {
   AiOutlineTwitter,
   AiFillLinkedin,

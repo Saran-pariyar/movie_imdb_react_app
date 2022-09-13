@@ -6,21 +6,23 @@ import { MovieContext } from "../Contexts/MovieContext";
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const contextData = useContext(MovieContext);
-  //we will again make popular movies show when we click Home Link
-  const goToHome = () => {
-    contextData.setEndpoint(
-      "movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a"
-    );
-    contextData.setHeading("Popular movies");
-  };
 
   //close navbar when we click nav-link
   const closeNav = () => {
     setNavbar(!navbar);
   };
 
+  //we will again make popular movies show when we click Home Link
+  const goToHome = () => {
+    closeNav();
+    contextData.setEndpoint(
+      "movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a"
+    );
+    contextData.setHeading("Popular movies");
+  };
+
   return (
-    <nav className="w-full bg-dark shadow">
+    <nav className="w-full bg-white shadow">
       <div className="text-xl justify-between px-3 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">

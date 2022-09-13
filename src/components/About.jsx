@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import profile_pic from '../style/prof.jpeg'
+import profile_pic from '../assets/prof.jpeg'
 
 const About = () => {
   const concepts = [
