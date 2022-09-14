@@ -37,7 +37,7 @@ const Result = () => {
           </>
         ) : (
           contextData.movie.map((element) => {
-            return <Card key={element.id} movieArrayData={element} />;
+            return  <Card key={element.id} movieArrayData={element} />;
           })
         )}
       </div>

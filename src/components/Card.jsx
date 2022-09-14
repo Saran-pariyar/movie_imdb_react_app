@@ -34,7 +34,8 @@ navigate("/movie_detail");
 
 }
   return (
-    <div className="rounded overflow-hidden shadow-lg">
+    <div className="grid-col-3 ">
+    <div className="rounded overflow-hidden shadow-lg h-fit">
       {status ? (
         <img
           className="h-3/4 "
@@ -44,14 +45,15 @@ navigate("/movie_detail");
       ) : (
         loading_spinner
       )}
-      <div className="px-0 py-0 ">
+      <div className="px-2 py-0 ">
         <div className="font-bold text-xl m-3 text-center ">
-          {movieArrayData.title}
+          {/* { movieArrayData.title.slice(0,20)} */}
+          {movieArrayData.title.length > 20 ? movieArrayData.title.slice(0,20) + "..." : movieArrayData.title }
         </div>
         <p className="text-gray-700 ">
           {!movieArrayData
             ? loading_spinner
-            : movieArrayData.overview.slice(0, 100) + "... "}
+            : movieArrayData.overview.slice(0, 60)+"... "}
         </p>
       </div>
       <div className="px-6 pt-4 pb-2 flex justify-center">
@@ -66,11 +68,12 @@ navigate("/movie_detail");
       <span className="flex justify-center">
         <button
           onClick={goToMovieDetail}
-          className="text-center w-3/5 text-white font-bold bg-indigo-900 p-1 rounded-lg hover:opacity-75"
+          className="mb-3 text-center w-3/5 text-white font-bold bg-indigo-900 p-1 rounded-lg hover:opacity-75"
         >
           More Details
         </button>
       </span>
+    </div>
     </div>
   );
 };
