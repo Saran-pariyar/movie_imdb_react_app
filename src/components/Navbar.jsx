@@ -27,7 +27,14 @@ const Navbar = () => {
       <div className="text-xl justify-between px-3 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link to="/" onClick={goToHome} className="text-2xl font-bold">
+            <Link
+              to="/"
+              onClick={() => {
+                setEndpoint(`movie/popular?api_key=${api_key}`);
+                setHeading("Popular movies");
+              }}
+              className="text-2xl font-bold"
+            >
               MovieGo
             </Link>
             <div className="md:hidden">

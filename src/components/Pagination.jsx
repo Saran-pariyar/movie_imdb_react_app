@@ -23,7 +23,6 @@ const Pagination = () => {
   const backToTop = () => {
     window.scrollTo({
       top: 35,
-      behavior: "smooth",
     });
   };
   return (

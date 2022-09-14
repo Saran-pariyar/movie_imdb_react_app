@@ -92,7 +92,7 @@ function App() {
             <Route exact path="/explore" element={<Explore />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/contact" element={<Contact />} />
-            <Route exact path="/movie_detail" element={<MovieDetail />} />
+            <Route exact path="/movie_detail/:movie_id" element={<MovieDetail />} />
             <Route exact path="/*" element={<Error />} />
 
 

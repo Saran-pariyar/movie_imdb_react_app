@@ -27,6 +27,7 @@ const Result = () => {
       <h2 className="text-center text-4xl bg-gray-900 p-1 text-white">
         {contextData.heading}
       </h2>
+      <div>
       <div className="p-10 place-items-center grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 ">
         {contextData.movie.length === 0 ? (
           <>
@@ -34,17 +35,20 @@ const Result = () => {
             <h2 className="text-4xl text-center">No results...</h2>{" "}
             {loading_spinner}
           </>
-        ) :   ( <>
+        ) :   ( 
+        <>
           {contextData.movie.map((element) => {
             return <Card key={element.id} movieArrayData={element} />;
           })}
-        <Pagination />
+          
         
         </>
         )
-          
         
-        }
+        
+      }
+      </div>
+      <Pagination />
       </div>
     </>
   );

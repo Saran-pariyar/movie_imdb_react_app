@@ -10,7 +10,8 @@ const About = () => {
     "Pagination",
     "Reusing code/components",
     "Using EndPoints in API calls",
-    "useEffect & useNavigate hooks"
+    "useEffect & useNavigate hooks",
+    "useParams hooks"
   ];
   const navigate = useNavigate();
   return (
@@ -38,7 +39,7 @@ const About = () => {
             </p>
             <div className="flex justify-center">
               <a
-                href="#learned_concepts"
+                href="#learned"
                 className="inline-flex text-white bg-blue-700 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg "
               >
                 Learnings from this project
@@ -49,11 +50,11 @@ const About = () => {
       </section>
 
       {/* learned concepts  */}
-      <section className="text-gray-600 body-font " id="learned_concepts">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="text-center mb-20">
+      <section className="text-gray-600 body-font " id="learned">
+        <div className="container px-5 py-10 mx-auto">
+          <div className="text-center mb-12">
             <h1 className="sm:text-3xl text-2xl font-bold  text-center title-font text-gray-900 mb-4">
-              I learned a lot of ReactJS concepts while working on this project,{" "}
+              I learned a lot of ReactJS concepts while working on this project,
               <br /> some of them are :
             </h1>
           </div>
