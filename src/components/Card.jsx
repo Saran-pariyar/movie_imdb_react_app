@@ -30,7 +30,6 @@ const goToMovieDetail = () =>{
     behavior:"smooth"
 })
 navigate("/movie_detail");
-
 }
   return (
     <div className="grid-col-3 ">
@@ -55,11 +54,11 @@ navigate("/movie_detail");
         </p>
       </div>
       <div className="px-6 pt-4 pb-2 flex justify-center">
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          Lang : {movieArrayData.original_language}
+        <span className="inline-block bg-gray-200 rounded-full px-1 py-1 text-sm font-semibold text-gray-700 mr-1 mb-2">
+          Lang: {movieArrayData.original_language}
         </span>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          <AiFillStar className="text-amber-400 inline text-xl" /> Ratings :{" "}
+        <span className="inline-block bg-gray-200 rounded-full px-1 py-1 text-sm font-semibold text-gray-700 mr-1 mb-2">
+          <AiFillStar className="text-amber-400 inline text-xl" /> Rating:
           {movieArrayData.vote_average}
         </span>
       </div>

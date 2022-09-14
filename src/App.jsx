@@ -20,9 +20,10 @@ function App() {
   const [movie, setMovie] = useState([]);
   const [data, setData] = useState("nothing");
   const [search, setSearch] = useState("");
+  const api_key = "d3129f18427d37c5012b4f4f64b1222a"
   //stores link data/the request that we want to send, it will contain link to search item or get movies
   const [endpoint, setEndpoint] = useState(
-    "movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a"
+    `movie/popular?api_key=${api_key}`
   );
   //the default value if popular movies and will be changed when we search or change categories
   const [heading, setHeading] = useState("Popular movies");
@@ -49,6 +50,7 @@ function App() {
           movie,
           setMovie,
           data,
+          api_key,
           setData,
           search,
           setSearch,

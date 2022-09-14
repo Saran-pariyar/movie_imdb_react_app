@@ -8,7 +8,7 @@ const Search = () => {
   const onSearchSubmit = (e) => {
     e.preventDefault();
     contextData.setEndpoint(
-      `search/movie?api_key=d3129f18427d37c5012b4f4f64b1222a&query=${query}`
+      `search/movie?api_key=${contextData.api_key}&query=${query}`
     );
     contextData.setHeading("Results for :" + query);
     contextData.setPage(1);

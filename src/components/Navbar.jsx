@@ -6,20 +6,21 @@ import { MovieContext } from "../Contexts/MovieContext";
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const contextData = useContext(MovieContext);
-
-  //close navbar when we click nav-link
-  const closeNav = () => {
-    setNavbar(!navbar);
-  };
-
+  const { setEndpoint, api_key, setHeading } = contextData;
   //we will again make popular movies show when we click Home Link
   const goToHome = () => {
-    closeNav();
-    contextData.setEndpoint(
-      "movie/popular?api_key=d3129f18427d37c5012b4f4f64b1222a"
-    );
-    contextData.setHeading("Popular movies");
+    //this method will close navbar
+    setNavbar(!navbar);
+    setEndpoint(`movie/popular?api_key=${api_key}`);
+    setHeading("Popular movies");
   };
+  //we added click method in Home link and use if we have click_method, we will use ternary to check
+  const nav_items = [
+    { title: "Home", link: "/", click_method: goToHome },
+    { title: "Explore Movies", link: "/explore" },
+    { title: "About", link: "/about" },
+    { title: "Contact", link: "/contact" },
+  ];
 
   return (
     <nav className="w-full bg-white shadow">
@@ -74,42 +75,27 @@ const Navbar = () => {
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link
-                  to="/"
-                  className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white"
-                  onClick={goToHome}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link
-                  to="/explore"
-                  onClick={closeNav}
-                  className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white"
-                >
-                  Explore Movies
-                </Link>
-              </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link
-                  to="/about"
-                  onClick={closeNav}
-                  className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white"
-                >
-                  About
-                </Link>
-              </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link
-                  to="/contact"
-                  onClick={closeNav}
-                  className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white"
-                >
-                  Contact
-                </Link>
-              </li>
+              {nav_items.map((element) => {
+                const { title, link, click_method } = element;
+                return (
+                  <li className="text-gray-600 hover:text-blue-600" key={title}>
+                    {console.log(element)}
+                    <Link
+                      to={link}
+                      onClick={
+                        click_method !== undefined
+                          ? click_method
+                          : () => {
+                              setNavbar(!navbar);
+                            }
+                      }
+                      className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white"
+                    >
+                      {title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

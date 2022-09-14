@@ -10,7 +10,7 @@ const Explore = () => {
   const [genres, setGenres] = useState([]);
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/genre/movie/list?api_key=d3129f18427d37c5012b4f4f64b1222a&language=en-US`
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${contextData.api_key}&language=en-US`
     )
       .then((res) => res.json())
       .then((data) => {
