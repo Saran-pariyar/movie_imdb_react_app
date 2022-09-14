@@ -28,7 +28,7 @@ const goToMovieDetail = (movie_id) =>{
   window.scrollTo({
     top:0
 })
-navigate(`/movie_detail/:${movie_id}`);
+navigate(`/movie_detail/${movie_id}`);
 }
   return (
     <div className="grid-col-3 ">
