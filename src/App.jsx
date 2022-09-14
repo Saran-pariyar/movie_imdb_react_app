@@ -29,11 +29,10 @@ function App() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const base_url = "https://api.themoviedb.org/3/";
-
-  const API_URL = `${base_url}${endpoint}&page=${page}`;
-
+  
   useEffect(() => {
+    const base_url = "https://api.themoviedb.org/3/";
+    const API_URL = `${base_url}${endpoint}&page=${page}`;
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {

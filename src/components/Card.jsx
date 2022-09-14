@@ -44,7 +44,7 @@ navigate("/movie_detail");
       ) : (
         loading_spinner
       )}
-      <div className="px-0 py-0">
+      <div className="px-0 py-0 ">
         <div className="font-bold text-xl m-3 text-center ">
           {movieArrayData.title}
         </div>

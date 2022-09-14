@@ -38,15 +38,16 @@ const Header = () => {
         <div className="right-section font1-5">
           <p className="find-me-text">Find me : </p>
           {social_links.map((element, index) => {
-            const Item_icon = element.icon;
+            const ItemIcon = element.icon;
             return (
               <a
                 href={element.href_link}
                 target="_blank"
                 className="social-links sm:text-2xl"
                 key={index}
+                rel="noreferrer"
               >
-                <Item_icon className="social-icons " />
+                < ItemIcon className="social-icons " />
               </a>
             );
           })}

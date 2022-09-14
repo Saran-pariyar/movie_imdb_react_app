@@ -5,11 +5,12 @@ import profile_pic from '../assets/prof.jpeg'
 const About = () => {
   const concepts = [
     "Working with external API",
-    "useContext & useEffect hooks",
+    "context API & useContext",
     "React-router-domv6",
     "Pagination",
     "Reusing code/components",
     "Using EndPoints in API calls",
+    "useEffect & useNavigate hooks"
   ];
   const navigate = useNavigate();
   return (
@@ -19,7 +20,7 @@ const About = () => {
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-7">
             <img
               className="object-cover object-center rounded"
-              alt="Profile picture"
+              alt="Main profile"
               src={profile_pic}
             />
           </div>

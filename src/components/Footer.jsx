@@ -32,16 +32,16 @@ const Footer = () => {
   return (
     <footer className="text-gray-600 body-font relative top-full">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-        <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <span className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <span className="ml-3 text-xl">MoviesGo</span>
-        </a>
+        </span>
         <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
           © 2022 all rights reserved —
           <a
             href="https://twitter.com/saran_pariyar1"
             className="text-gray-600 ml-1"
-            rel="noopener noreferrer"
-            target="_blank"
+            rel="noreferrer"
+            target="_blank" 
           >
             @saran_pariyar1
           </a>
@@ -49,15 +49,15 @@ const Footer = () => {
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
           
         {social_links.map((element, index) => {
-            const Item_icon = element.icon;
+            const ItemIcon = element.icon;
             return (
               <a
                 href={element.href_link}
-                target="_blank"
+                target="_blank" rel="noreferrer" 
                 className="social-links sm:text-2xl"
                 key={index}
               >
-                <Item_icon className="social-icons " />
+                <ItemIcon className="social-icons " />
               </a>
             );
           })}
