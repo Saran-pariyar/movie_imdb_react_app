@@ -1,4 +1,3 @@
-import React from 'react'
 import {TbError404} from "react-icons/tb"
 const Error = () => {
   return (

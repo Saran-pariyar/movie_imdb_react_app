@@ -1,4 +1,3 @@
-import React from "react";
 import { FidgetSpinner } from "react-loader-spinner";
 import { AiFillStar } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
@@ -47,7 +46,6 @@ navigate("/movie_detail");
       )}
       <div className="px-2 py-0 ">
         <div className="font-bold text-xl m-3 text-center ">
-          {/* { movieArrayData.title.slice(0,20)} */}
           {movieArrayData.title.length > 20 ? movieArrayData.title.slice(0,20) + "..." : movieArrayData.title }
         </div>
         <p className="text-gray-700 ">

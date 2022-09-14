@@ -18,7 +18,6 @@ const Explore = () => {
       });
   }, []);
   const onClickHandler = (id, name) => {
-    // https://api.themoviedb.org/3/discover/movie?api_key={{tmdb_api_key}}&with_genres=16
     contextData.setEndpoint(
       `discover/movie?api_key=d3129f18427d37c5012b4f4f64b1222a&with_genres=${id}`
     );

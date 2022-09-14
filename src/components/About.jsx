@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import profile_pic from '../assets/prof.jpeg'
+import profile_pic from '../assets/profile.jpeg'
 
 const About = () => {
   const concepts = [
@@ -58,16 +58,16 @@ const About = () => {
             </h1>
           </div>
           <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-            {concepts.map((element) => {
+            {concepts.map((element,index) => {
               return (
-                <div className="p-2 sm:w-1/2 w-full">
+                <div className="p-2 sm:w-1/2 w-full" key={index}>
                   <div className="bg-gray-100 rounded flex p-4 h-full items-center">
                     <svg
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="3"
                       className="text-blue-700 w-6 h-6 flex-shrink-0 mr-4"
                       viewBox="0 0 24 24"
                     >

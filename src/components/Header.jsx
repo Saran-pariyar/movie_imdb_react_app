@@ -1,4 +1,3 @@
-import "../assets/Header.css";
 import {
   AiOutlineTwitter,
   AiFillLinkedin,
@@ -32,22 +31,22 @@ const Header = () => {
   ];
 
   return (
-    <div className="header text-2xl">
-      <div className="header-container">
+    <div className="text-white bg-neutral-900 text-xl p-2">
+      <div className="flex place-content-around">
         <p>Saran pariyar</p>
-        <div className="right-section font1-5">
-          <p className="find-me-text">Find me : </p>
+        <div className="flex self-center font1-5">
+          <p className="hidden find-me-text sm:block">Find me : </p>
           {social_links.map((element, index) => {
             const ItemIcon = element.icon;
             return (
               <a
                 href={element.href_link}
                 target="_blank"
-                className="social-links sm:text-2xl"
+                className="sm:text-2xl mx-1"
                 key={index}
                 rel="noreferrer"
               >
-                < ItemIcon className="social-icons " />
+                < ItemIcon  />
               </a>
             );
           })}
