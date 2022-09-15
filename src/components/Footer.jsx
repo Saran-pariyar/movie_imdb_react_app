@@ -5,8 +5,12 @@ import {
     AiFillGithub,
     AiFillFacebook,
   } from "react-icons/ai/";
-
+  import { useContext } from "react";
+  import { MovieContext } from "../Contexts/MovieContext";
+  
 const Footer = () => {
+  const contextData = useContext(MovieContext);
+
     const  social_links = [
         {
           icon: AiOutlineTwitter,
@@ -30,7 +34,7 @@ const Footer = () => {
         },
       ];
   return (
-    <footer className=" text-gray-600 body-font relative top-full border border-t-2">
+    <footer className={` text-gray-600 body-font relative top-full border border-t-2 `}>
       <div className="container px-5 py-4 mx-auto flex items-center sm:flex-row flex-col">
         <span className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <span className="ml-3 text-xl">MoviesGo</span>

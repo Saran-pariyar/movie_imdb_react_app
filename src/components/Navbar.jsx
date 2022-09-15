@@ -6,7 +6,7 @@ import { MovieContext } from "../Contexts/MovieContext";
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const contextData = useContext(MovieContext);
-  const { setEndpoint, api_key, setHeading } = contextData;
+  const { setEndpoint, api_key, setHeading,theme } = contextData;
   //we will again make popular movies show when we click Home Link
   const goToHome = () => {
     //this method will close navbar
@@ -23,7 +23,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full bg-white shadow">
+    <nav className={`w-full ${theme === 'light' ? "bg-white " : 'bg-stone-800 text-white border-b' }  `}>
       <div className="text-xl justify-between px-3 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -39,7 +39,7 @@ const Navbar = () => {
             </Link>
             <div className="md:hidden">
               <button
-                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                className={`p-2 ${theme === 'light' ? "text-gray-700" : 'text-white' }  rounded-md outline-none focus:border-gray-400 focus:border`}
                 onClick={() => setNavbar(!navbar)}
               >
                 {navbar ? (
@@ -86,7 +86,6 @@ const Navbar = () => {
                 const { title, link, click_method } = element;
                 return (
                   <li className="text-gray-600 hover:text-blue-600" key={title}>
-                    {console.log(element)}
                     <Link
                       to={link}
                       onClick={
@@ -96,7 +95,7 @@ const Navbar = () => {
                               setNavbar(!navbar);
                             }
                       }
-                      className="text-black p-2 hover:bg-slate-600 rounded-lg hover:text-white"
+                      className={`p-2 rounded-lg ${theme === 'light' ? 'text-black  hover:bg-slate-600  hover:text-white' : "text-white hover:text-black hover:bg-slate-200" }  `}
                     >
                       {title}
                     </Link>
