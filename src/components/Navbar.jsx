@@ -86,7 +86,6 @@ const Navbar = () => {
                 const { title, link, click_method } = element;
                 return (
                   <li className="text-gray-600 hover:text-blue-600" key={title}>
-                    {console.log(element)}
                     <Link
                       to={link}
                       onClick={

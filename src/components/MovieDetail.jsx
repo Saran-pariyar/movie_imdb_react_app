@@ -22,7 +22,7 @@ const MovieDetail = () => {
     fetch_movie_detail();
   }, []);
 //get similar movies : 
- const get_similar_movies = `https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${contextData.api_key}`
+//  const get_similar_movies = `https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${contextData.api_key}`
 
 
   //to get only one digit after point cause it returns like this : 8.345
@@ -59,32 +59,42 @@ const MovieDetail = () => {
                     </span>
                   </span>
                   <span className="flex ml-3 pl-3 py-2  sm:border-l-2 sm:border-gray-200  flex-wrap">
-                    {
+                    {movieFullDetail.genres ?
                       movieFullDetail.genres.map((item)=>{
-                        return <span class="text-xs inline-block py-1 px-1.5 mr-1 leading-none text-center whitespace-nowrap  font-bold bg-purple-600 text-white rounded">{item.name}</span>
-                      })
+                        return <span key={item.id}   className="text-xs inline-block py-1 px-1.5 mr-1 leading-none text-center whitespace-nowrap  font-bold bg-purple-600 text-white rounded">{item.name}</span>
+                      }): ""
                     }
                     
                   </span>
                 </div>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed ">
                   {movieFullDetail.overview}
                 </p>
-                <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-                  
+                <p className="text-gray-300 mt-1 px-1 font-bold bg-lime-900 inline-block ">Length: {movieFullDetail.runtime}min</p>
+                <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5 flex-wrap">
+                  Production: 
+                  {movieFullDetail.production_companies ?  movieFullDetail.production_companies.map((element)=>{
+                    return <p key={element.id} className="inline-block px-1 mx-1 bg-zinc-700 whitespace-nowrap">{element.name}</p>
+                  })
+                : <p className="inline-block px-1 mx-1 bg-zinc-700">N/F</p>
+                }
                 </div>
                 <div className="flex">
                   <span className="title-font font-medium text-2xl ">
                     Get movie
                   </span>
-                  <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                    Button
-                  </button>
+                  <a target="_blank" href={`https://www.imdb.com/title/${movieFullDetail.imdb_id}`} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                    View in IMDB
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <p className="bg-black text-white text-2xl p-2 text-center">Similar movies : </p>
+      <div className="container">
+        
       </div>
     </>
   );
