@@ -29,6 +29,7 @@ function App() {
   const [heading, setHeading] = useState("Popular movies");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [theme, setTheme] = useState('light')
 
   
   useEffect(() => {
@@ -43,7 +44,7 @@ function App() {
   }, [endpoint, page]);
 
   return (
-    <div className="App">
+    <div className={`App ${theme === 'light' ? " " : "bg-stone-800 text-white"} transition-all duration-300`}>
       <div className="min-h-screen ">
       <MovieContext.Provider 
         value={{
@@ -62,6 +63,8 @@ function App() {
           setPage,
           totalPages,
           setTotalPages,
+          theme,
+          setTheme
         }}
       >
         <BrowserRouter >
@@ -100,8 +103,8 @@ function App() {
           </Routes>
           {/* <Card /> */}
         </BrowserRouter>
-      </MovieContext.Provider>
       <BackToTop />
+      </MovieContext.Provider>
       </div>
       <Footer />
     </div>

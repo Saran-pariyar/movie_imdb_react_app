@@ -1,9 +1,14 @@
 import {TbError404} from "react-icons/tb"
+import { useContext } from "react";
+import { MovieContext } from "../Contexts/MovieContext";
+
 const Error = () => {
+  const contextData = useContext(MovieContext);
+
   return (
-    <div className='mx-2 my-20 flex  flex-col items-center'> 
+    <div className={`mx-2 my-20 flex  flex-col items-center ${contextData.theme === 'dark' ?"bg-stone-900" : ""}`}> 
         <TbError404 className='text-6xl text-red-700' />
-        <p className='text-3xl text-center'> Sorry, the location you want to go does not exist!</p>
+        <p className={`text-3xl text-center ${contextData.theme === 'dark' ?"text-slate-300" : ""}`}> Sorry, the location you want to go does not exist!</p>
     </div>
   )
 }

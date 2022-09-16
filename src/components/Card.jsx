@@ -1,9 +1,12 @@
 import { FidgetSpinner } from "react-loader-spinner";
 import { AiFillStar } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { MovieContext } from "../Contexts/MovieContext";
 
 const Card = ({ movieArrayData }) => {
   const API_IMG = "https://image.tmdb.org/t/p/w500";
+  const contextData = useContext(MovieContext);
 
   const loading_spinner = (
     <div className="flex justify-center">
@@ -32,7 +35,7 @@ navigate(`/movie_detail/${movie_id}`);
 }
   return (
     <div className="grid-col-3 ">
-    <div className="rounded overflow-hidden shadow-lg h-fit">
+    <div className={`rounded overflow-hidden shadow-lg h-fit ${contextData.theme === 'dark' ? 'bg-stone-900 text-white' : ""}`}>
       {status ? (
         <img
           className="h-3/4 "
@@ -46,7 +49,7 @@ navigate(`/movie_detail/${movie_id}`);
         <div className="font-bold text-xl m-3 text-center ">
           {movieArrayData.title.length > 20 ? movieArrayData.title.slice(0,20) + "..." : movieArrayData.title }
         </div>
-        <p className="text-gray-700 ">
+        <p className={`text-gray-700 ${contextData.theme === 'dark' ? "text-slate-100" : ""} text-center`}>
           {!movieArrayData
             ? loading_spinner
             : movieArrayData.overview.slice(0, 60)+"... "}
@@ -64,8 +67,9 @@ navigate(`/movie_detail/${movie_id}`);
       <span className="flex justify-center">
         <button
           onClick={()=>{goToMovieDetail(movieArrayData.id)}}
-          className="mb-3 text-center w-3/5 text-white font-bold bg-indigo-900 p-1 rounded-lg hover:opacity-75"
+          className={`mb-3 text-center w-3/5 text-white font-bold bg-indigo-900 p-1 rounded-lg hover:opacity-75 ${contextData.theme === 'dark' ? "text-white bg-black hover:bg-slate-800" : ""}`}
         >
+          {/* ${contextData.theme === 'dark' ? "text-white bg-black hover:bg-slate-800" : " "} */}
           More Details
         </button>
       </span>

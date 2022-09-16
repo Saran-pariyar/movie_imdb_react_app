@@ -5,6 +5,9 @@ import {
   AiFillGithub,
   AiFillFacebook,
 } from "react-icons/ai/";
+import { TbSun, TbSunOff } from "react-icons/tb";
+import { useContext } from "react";
+import { MovieContext } from "../Contexts/MovieContext";
 
 const Header = () => {
   const  social_links = [
@@ -29,11 +32,16 @@ const Header = () => {
       href_link: "https://www.facebook.com/saran.pariyar.50",
     },
   ];
+  const contextData = useContext(MovieContext);
 
+const themeChanger = ()=>{
+  contextData.theme === 'light' ? contextData.setTheme('dark') : contextData.setTheme('light');
+}
   return (
     <div className="text-white bg-neutral-900 text-xl p-2">
       <div className="flex place-content-around">
-        <p>Saran pariyar</p>
+        {contextData.theme === 'light' ? <TbSun className="text-2xl cursor-pointer"  onClick={themeChanger} /> : <TbSunOff className="text-2xl cursor-pointer" onClick={themeChanger} /> }
+        
         <div className="flex self-center font1-5">
           <p className="hidden find-me-text sm:block">Find me : </p>
           {social_links.map((element, index) => {
