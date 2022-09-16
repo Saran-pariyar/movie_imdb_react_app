@@ -44,7 +44,7 @@ const MovieDetail = () => {
       />
     </div>);
   return (
-<>
+    <>
     {movieFullDetail.original_title ? <>
       <div className="flex justify-center  ">
         <div
@@ -77,13 +77,8 @@ const MovieDetail = () => {
                   <span className="flex ml-3 pl-3 py-2  sm:border-l-2 sm:border-gray-200  flex-wrap">
                     {movieFullDetail.genres ?
                       movieFullDetail.genres.map((item)=>{
-<<<<<<< HEAD
                         return <span key={item.id}   className="text-xs inline-block py-1 px-1.5 mr-1 leading-none text-center whitespace-nowrap  font-bold bg-purple-600 text-white rounded">{item.name}</span>
                       }): ""
-=======
-                        return <span key={item.name} className="text-xs inline-block py-1 px-1.5 mr-1 leading-none text-center whitespace-nowrap  font-bold bg-purple-600 text-white rounded">{item.name}</span>
-                      })
->>>>>>> temporary_branch
                     }
                     
                   </span>
@@ -91,7 +86,6 @@ const MovieDetail = () => {
                 <p className="leading-relaxed ">
                   {movieFullDetail.overview}
                 </p>
-<<<<<<< HEAD
                 <p className="text-gray-300 mt-1 px-1 font-bold bg-lime-900 inline-block ">Length: {movieFullDetail.runtime}min</p>
                 <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5 flex-wrap">
                   Production: 
@@ -100,28 +94,13 @@ const MovieDetail = () => {
                   })
                 : <p className="inline-block px-1 mx-1 bg-zinc-700">N/F</p>
                 }
-=======
-                <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5 whitespace-nowrap flex-wrap">
-                  <span>Production : </span> 
-                  {
-                    movieFullDetail.production_companies?.map((element)=>{
-                      return  (<span key={element.id} className="inline-flex items-center mx-1 justify-center px-2 py-1 text-xs font-bold leading-none text-indigo-100 bg-indigo-700 rounded">{element.name}</span>)
-                    })
-                  }
-                  
->>>>>>> temporary_branch
                 </div>
                 <div className="flex">
                   <span className="title-font font-medium text-2xl ">
                     Get movie
                   </span>
-<<<<<<< HEAD
                   <a target="_blank" href={`https://www.imdb.com/title/${movieFullDetail.imdb_id}`} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                     View in IMDB
-=======
-                  <a rel="noreferrer" href={`https://www.imdb.com/title/${movieFullDetail.imdb_id}`} target="_blank" className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                   View in IMDB
->>>>>>> temporary_branch
                   </a>
                 </div>
               </div>
@@ -129,16 +108,14 @@ const MovieDetail = () => {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
       <p className="bg-black text-white text-2xl p-2 text-center">Similar movies : </p>
       <div className="container">
         
       </div>
-=======
-    </> : <div className="mt-4">{spinner} </div>}
->>>>>>> temporary_branch
-    </>
-  );
+    </> : <p></p> }
+  
+  </>
+  )
 };
 
 export default MovieDetail;
