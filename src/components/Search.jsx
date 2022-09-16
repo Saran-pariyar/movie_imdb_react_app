@@ -32,7 +32,7 @@ const Search = () => {
           />
           <button
             type="submit"
-            className={`text-xl text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg  px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ${contextData.theme === 'dark' ? "bg-white text-black" : ""}`}
+            className={`text-xl text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg  px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ${contextData.theme === 'dark' ? "bg-stone-100 text-black" : ""}`}
           >
             Search
           </button>
