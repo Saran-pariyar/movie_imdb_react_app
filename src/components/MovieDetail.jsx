@@ -90,7 +90,7 @@ const MovieDetail = () => {
                 <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5 flex-wrap">
                   Production: 
                   {movieFullDetail.production_companies ?  movieFullDetail.production_companies.map((element)=>{
-                    return <p key={element.id} className="inline-block px-1 mx-1 bg-zinc-700 whitespace-nowrap">{element.name}</p>
+                    return <p key={element.id} className="inline-block px-1 m-1 bg-zinc-700 whitespace-nowrap">{element.name}</p>
                   })
                 : <p className="inline-block px-1 mx-1 bg-zinc-700">N/F</p>
                 }
