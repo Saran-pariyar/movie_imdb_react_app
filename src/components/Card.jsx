@@ -35,7 +35,7 @@ navigate(`/movie_detail/${movie_id}`);
 }
   return (
     <div className="grid-col-3 ">
-    <div className={`rounded overflow-hidden shadow-lg h-fit ${contextData.theme === 'dark' ? 'bg-stone-600 text-white' : ""}`}>
+    <div className={`rounded overflow-hidden shadow-lg h-fit ${contextData.theme === 'dark' ? 'bg-stone-900 text-white' : ""}`}>
       {status ? (
         <img
           className="h-3/4 "
@@ -67,8 +67,9 @@ navigate(`/movie_detail/${movie_id}`);
       <span className="flex justify-center">
         <button
           onClick={()=>{goToMovieDetail(movieArrayData.id)}}
-          className={`mb-3 text-center w-3/5 text-white font-bold bg-indigo-900 p-1 rounded-lg hover:opacity-75 ${contextData.theme === 'dark' ? "text-indigo-900 bg-white" : ""}`}
+          className={`mb-3 text-center w-3/5 text-white font-bold bg-indigo-900 p-1 rounded-lg hover:opacity-75 ${contextData.theme === 'dark' ? "text-white bg-black hover:bg-slate-800" : ""}`}
         >
+          {/* ${contextData.theme === 'dark' ? "text-white bg-black hover:bg-slate-800" : " "} */}
           More Details
         </button>
       </span>

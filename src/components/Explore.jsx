@@ -28,7 +28,7 @@ const Explore = () => {
   return (
     <section className="explore my-3">
       <h1 className="m-4 text-3xl">Categories </h1>
-      <div className=" m-3 overflow-x-scroll h-32  flex  items-center  border px-2 sm:block sm:h-auto sm:overflow-x-visible sm:border-none bg-slate-400 sm:bg-white">
+      <div className={` my-3 overflow-x-scroll h-32  flex  items-center  border p-2 sm:block sm:h-auto sm:overflow-x-visible sm:border-none ${contextData.theme === 'dark' ? "bg-slate-900" :"bg-slate-400 sm:bg-white"}`}>
         {genres.map((element) => {
           return (
             <>
@@ -37,7 +37,7 @@ const Explore = () => {
                   onClickHandler(element.id, element.name);
                 }}
                 key={element.id}
-                className="  text-slate-500 border bg-white border-slate-500 hover:bg-slate-500 hover:text-white active:bg-slate-600 font-bold uppercase px-7 py-3 rounded-full outline-none focus:outline-none mr-1  ease-linear transition-all duration-150 sm:mb-4"
+                className={`text-slate-500 border bg-white border-slate-500 hover:bg-slate-500 hover:text-white active:bg-slate-600 font-bold uppercase px-7 py-3 rounded-full outline-none focus:outline-none mr-1  ease-linear transition-all duration-150 sm:mb-4 ${contextData.theme === 'dark' ? "bg-black text-white" : ""}`}
                 type="button"
               >
                 {element.name}

@@ -44,7 +44,7 @@ function App() {
   }, [endpoint, page]);
 
   return (
-    <div className={`App ${theme === 'light' ? " " : "bg-stone-800 text-white"}`}>
+    <div className={`App ${theme === 'light' ? " " : "bg-stone-800 text-white"} transition-all duration-300`}>
       <div className="min-h-screen ">
       <MovieContext.Provider 
         value={{
@@ -103,8 +103,8 @@ function App() {
           </Routes>
           {/* <Card /> */}
         </BrowserRouter>
-      </MovieContext.Provider>
       <BackToTop />
+      </MovieContext.Provider>
       </div>
       <Footer />
     </div>
