@@ -67,7 +67,7 @@ navigate(`/movie_detail/${movie_id}`);
       <span className="flex justify-center">
         <button
           onClick={()=>{goToMovieDetail(movieArrayData.id)}}
-          className={`mb-3 text-center w-3/5 text-white font-bold bg-indigo-900 p-1 rounded-lg hover:opacity-75 ${contextData.theme === 'dark' ? "text-white bg-black hover:bg-slate-800" : ""}`}
+          className={`mb-3 text-center w-3/5 font-bol p-1 rounded-lg hover:opacity-75 ${contextData.theme === 'dark' ?  "text-white bg-black hover:bg-slate-800 ": "text-white bg-blue-700 hover:bg-indigo-600"}`}
         >
           {/* ${contextData.theme === 'dark' ? "text-white bg-black hover:bg-slate-800" : " "} */}
           More Details

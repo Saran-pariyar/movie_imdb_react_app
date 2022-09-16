@@ -24,7 +24,7 @@ const Search = () => {
           <input
             type="search"
             id="default-search"
-            className={`text-xl block p-4 pl-10 w-full bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${contextData.theme === 'dark' ? " " : ""} `}
+            className={`text-xl block p-4 pl-10 w-full  rounded-lg border  focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${contextData.theme === 'dark' ? " bg-gray-800 border-slate-500" : "bg-gray-50 border-gray-300"} `}
             placeholder="Search movies"
             required
             onChange={onChangeHandler}
@@ -32,7 +32,7 @@ const Search = () => {
           />
           <button
             type="submit"
-            className={`text-xl text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg  px-4 py-2  ${contextData.theme === 'dark' ? "bg-blue-900" : ""}`}
+            className={`text-xl  absolute right-2.5 bottom-2.5  focus:ring-4 focus:outline-none  font-medium rounded-lg  px-4 py-2  ${contextData.theme === 'dark' ? "text-white bg-black hover:bg-slate-500 hover:text-black" : "text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 "}`}
           >
             Search
           </button>

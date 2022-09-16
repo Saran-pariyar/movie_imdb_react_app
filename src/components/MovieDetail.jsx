@@ -99,7 +99,7 @@ const MovieDetail = () => {
                   <span className="title-font font-medium text-2xl ">
                     Get movie
                   </span>
-                  <a target="_blank" href={`https://www.imdb.com/title/${movieFullDetail.imdb_id}`} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                  <a target="_blank" href={`https://www.imdb.com/title/${movieFullDetail.imdb_id}`} className={`flex ml-auto  border-0 py-2 px-6 focus:outline-none rounded ${contextData.theme === 'dark' ?  "text-white bg-black hover:bg-slate-800 ": "text-white bg-blue-700 hover:bg-indigo-600"}`}>
                     View in IMDB
                   </a>
                 </div>
@@ -108,10 +108,10 @@ const MovieDetail = () => {
           </div>
         </div>
       </div>
-      <p className="bg-black text-white text-2xl p-2 text-center">Similar movies : </p>
+      {/* <p className="bg-black text-white text-2xl p-2 text-center">Similar movies : </p>
       <div className="container">
         
-      </div>
+      </div> */}
     </> : <p></p> }
   
   </>

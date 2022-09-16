@@ -86,7 +86,7 @@ const About = () => {
               );
             })}
           </div>
-          <button onClick={()=>{navigate('/contact')}} className={`flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg ${contextData.theme ==='dark' ? "text-white bg-black hover:bg-slate-800" : ""}`}>
+          <button onClick={()=>{navigate('/contact')}} className={`flex mx-auto mt-16 border-0 py-2 px-8 focus:outline-none  rounded text-lg ${contextData.theme === 'dark' ?  "text-white bg-black hover:bg-slate-800 ": "text-white bg-blue-700 hover:bg-indigo-600"}`}>
             Reach me out!
           </button>
         </div>

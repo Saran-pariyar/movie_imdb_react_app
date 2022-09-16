@@ -37,7 +37,7 @@ const Explore = () => {
                   onClickHandler(element.id, element.name);
                 }}
                 key={element.id}
-                className={`text-slate-500 border bg-white border-slate-500 hover:bg-slate-500 hover:text-white active:bg-slate-600 font-bold uppercase px-7 py-3 rounded-full outline-none focus:outline-none mr-1  ease-linear transition-all duration-150 sm:mb-4 ${contextData.theme === 'dark' ? "bg-black text-white" : ""}`}
+                className={` font-bold uppercase px-7 py-3 rounded-full outline-none focus:outline-none mr-1  ease-linear transition-all duration-150 sm:mb-4 ${contextData.theme === 'dark' ? "text-white bg-slate-500 border-white hover:bg-white hover:text-slate-500" : "text-slate-500 border bg-white border-slate-500 hover:bg-slate-500 hover:text-white active:bg-slate-600"}`}
                 type="button"
               >
                 {element.name}
