@@ -56,18 +56,18 @@ navigate(`/movie_detail/${movie_id}`);
         </p>
       </div>
       <div className="px-6 pt-4 pb-2 flex justify-center">
-        <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-1 mb-2">
+        <span className={`inline-block  rounded-full px-2 py-1 text-sm font-semibold  mr-1 mb-2 ${contextData.theme === 'dark' ? " bg-gray-700 text-gray-200" : "bg-gray-200 text-gray-700"}`}>
           Lang: {movieArrayData.original_language}
         </span>
-        <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-1 mb-2">
-          <AiFillStar className="text-amber-400 inline text-xl" /> Rating:   
+        <span className={`inline-block ${contextData.theme === 'dark' ? " bg-gray-700 text-gray-200" : "bg-gray-200 text-gray-700"}  rounded-full px-2 py-1 text-sm font-semibold  mr-1 mb-2`}>
+          <AiFillStar className="text-amber-400 inline text-xl" />   
            {movieArrayData.vote_average}
         </span>
       </div>
       <span className="flex justify-center">
         <button
           onClick={()=>{goToMovieDetail(movieArrayData.id)}}
-          className={`mb-3 text-center w-3/5 font-bol p-1 rounded-lg hover:opacity-75 ${contextData.theme === 'dark' ?  "text-white bg-black hover:bg-slate-800 ": "text-white bg-blue-700 hover:bg-indigo-600"}`}
+          className={`mb-3 text-center w-3/5 font-bol p-1 rounded-lg hover:opacity-75 ${contextData.theme === 'dark' ?  "text-white bg-violet-900 hover:bg-slate-800 ": "text-white bg-blue-700 hover:bg-indigo-600"}`}
         >
           {/* ${contextData.theme === 'dark' ? "text-white bg-black hover:bg-slate-800" : " "} */}
           More Details
