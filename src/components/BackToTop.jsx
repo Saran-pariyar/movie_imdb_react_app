@@ -21,10 +21,10 @@ w.scrollTo({
 })
     }
   return (
-    <span>
+    <span className="z-50">
         {
             backToTop && (
-                <button onClick={scrollUp} className="fixed bottom-4 right-4 text-3xl bg-slate-500 text-white p-2" >^</button>
+                <button onClick={scrollUp} className="fixed bottom-3 rounded-xl right-4 text-3xl bg-slate-500 text-white p-2" >^</button>
             )
         }
     </span>

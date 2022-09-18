@@ -43,11 +43,11 @@ const About = () => {
               skills as well as learn more advanced concepts.
             </p>
             <div className="flex justify-center">
-              <a
-                href="#learned"
+              <a target="_blank"
+                href="https://saran-pariyar.github.io/HTML-CSS-JS-portfolio/"
                 className={`inline-flex ${contextData.theme === 'dark' ?  "text-white bg-black hover:bg-slate-800 ": "text-white bg-blue-700 hover:bg-indigo-600"} border-0 py-2 px-6 focus:outline-none  rounded text-lg `}
               >
-                Learnings from this project
+                View portfolio site
               </a>
             </div>
           </div>
