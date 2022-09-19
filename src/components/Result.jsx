@@ -24,6 +24,11 @@ const Result = () => {
 
   return (
     <>
+    { contextData.loading === true ? <div  className="flex flex-col items-center mt-12 "><FidgetSpinner className="" />
+    <h1 className={`text-2xl font-bold mt-4 ${contextData.theme === 'dark' ? "text-white" : ""}`}>Loading...</h1>
+    </div> : 
+    (<>
+    
       <h2 className="text-center text-4xl bg-gray-900 p-1 text-white">
         {contextData.heading}
       </h2>
@@ -50,6 +55,8 @@ const Result = () => {
       </div>
       <Pagination />
       </div>
+    </>)}
+
     </>
   );
 };

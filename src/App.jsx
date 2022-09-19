@@ -30,14 +30,17 @@ function App() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [theme, setTheme] = useState('light')
+  const [loading, setLoading] = useState(false)
 
   
   useEffect(() => {
     const base_url = "https://api.themoviedb.org/3/";
     const API_URL = `${base_url}${endpoint}&page=${page}`;
+    setLoading(true)
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
+        setLoading(false)
         //now next page items will concat to previous data
         // setMovie(movie.concat(data.results));
         // setReceivedData(data.results);
@@ -87,7 +90,8 @@ function App() {
           totalPages,
           setTotalPages,
           theme,
-          setTheme
+          setTheme,
+          loading
         }}
       >
         <BrowserRouter >
