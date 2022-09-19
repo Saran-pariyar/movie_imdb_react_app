@@ -9,13 +9,13 @@ const Pagination = () => {
   const nextPage = () => {
     if (totalPages > page) {
       setPage(page + 1);
-      backToTop();
+      // backToTop();
     }
   };
   const prevPage = () => {
     if (page > 1) {
       setPage(page - 1);
-      backToTop();
+      // backToTop();
     }
   };
 

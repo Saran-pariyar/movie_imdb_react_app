@@ -6,11 +6,12 @@ import { MovieContext } from "../Contexts/MovieContext";
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const contextData = useContext(MovieContext);
-  const { setEndpoint, api_key, setHeading,theme } = contextData;
+  const { setEndpoint, api_key, setHeading,theme,setPage } = contextData;
   //we will again make popular movies show when we click Home Link
   const goToHome = () => {
     //this method will close navbar
     setNavbar(!navbar);
+    setPage(1);
     setEndpoint(`movie/popular?api_key=${api_key}`);
     setHeading("Popular movies");
   };
@@ -30,6 +31,7 @@ const Navbar = () => {
             <Link
               to="/"
               onClick={() => {
+                setPage(1);
                 setEndpoint(`movie/popular?api_key=${api_key}`);
                 setHeading("Popular movies");
               }}
