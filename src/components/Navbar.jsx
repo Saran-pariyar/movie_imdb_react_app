@@ -24,7 +24,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`w-full ${theme === 'light' ? "bg-white " : 'bg-stone-800 text-white border-b' }  `}>
+    <nav className={`w-full ${theme === 'light' ? "bg-white border border-b-2" : 'bg-stone-800 text-white border-b' }  `}>
       <div className="text-xl justify-between px-3 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">

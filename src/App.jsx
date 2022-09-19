@@ -36,7 +36,8 @@ function App() {
   useEffect(() => {
     const base_url = "https://api.themoviedb.org/3/";
     const API_URL = `${base_url}${endpoint}&page=${page}`;
-    setLoading(true)
+    //now our whole page will not show loading spinner in result component when we scrolled to bottom
+    page===1 ? setLoading(true) : setLoading(false)
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
@@ -57,18 +58,7 @@ function App() {
   }, [endpoint, page]);
   // useEffect(()=>{
   // },[page])
-  const scrolledToEnd=()=>{
-    if(totalPages > page && totalPages !== page){
-//only gets new page if there is page available
-      setPage(page + 1)
-    }
-  }
-  window.onscroll = function (){
-    //check if we scrolled to bottom
-    if(window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight){
-      scrolledToEnd();
-    }
-  }
+  
   return (
     <div className={`App ${theme === 'light' ? " " : "bg-stone-800 text-white"} transition-all duration-300`}>
       <div className="min-h-screen ">

@@ -112,7 +112,9 @@ const MovieDetail = () => {
       <div className="container">
         
       </div> */}
-    </> : <p></p> }
+    </> : <div  className="flex flex-col items-center mt-12 ">{spinner}
+    <h1 className={`text-2xl font-bold mt-4 ${contextData.theme === 'dark' ? "text-white" : ""}`}>Loading...</h1>
+    </div> }
   
   </>
   )

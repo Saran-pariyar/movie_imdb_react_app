@@ -22,9 +22,25 @@ const Result = () => {
 
   const contextData = useContext(MovieContext);
 
+//show new dat when we scroll to the end
+  const scrolledToEnd=()=>{
+    if(contextData.totalPages > contextData.page && contextData.totalPages !== contextData.page){
+//only gets new page if there is page available
+contextData.setPage(contextData.page + 1)
+    }
+  }
+  window.onscroll = function (){
+    //check if we scrolled to bottom
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      scrolledToEnd();
+      
+    }
+  }
+
   return (
     <>
-    { contextData.loading === true ? <div  className="flex flex-col items-center mt-12 "><FidgetSpinner className="" />
+    {
+     contextData.loading === true   ? <div  className="flex flex-col items-center mt-12 "><FidgetSpinner className="" />
     <h1 className={`text-2xl font-bold mt-4 ${contextData.theme === 'dark' ? "text-white" : ""}`}>Loading...</h1>
     </div> : 
     (<>
@@ -53,7 +69,9 @@ const Result = () => {
         
       }
       </div>
-      <Pagination />
+      {
+        //now we don't need pagination anymore
+      /* <Pagination /> */}
       </div>
     </>)}
 
