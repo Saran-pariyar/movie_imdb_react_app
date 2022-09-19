@@ -3,6 +3,7 @@ import { MovieContext } from "../Contexts/MovieContext";
 import Card from "./Card";
 import { FidgetSpinner } from "react-loader-spinner";
 import Pagination from "./Pagination";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Result = () => {
   const loading_spinner = (
@@ -22,59 +23,76 @@ const Result = () => {
 
   const contextData = useContext(MovieContext);
 
-//show new dat when we scroll to the end
-  const scrolledToEnd=()=>{
-    if(contextData.totalPages > contextData.page && contextData.totalPages !== contextData.page){
-//only gets new page if there is page available
-contextData.setPage(contextData.page + 1)
-    }
-  }
-  window.onscroll = function (){
-    //check if we scrolled to bottom
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      scrolledToEnd();
-      
-    }
-  }
+  //show new dat when we scroll to the end
+  //   const scrolledToEnd=()=>{
+  //     if(contextData.totalPages > contextData.page && contextData.totalPages !== contextData.page){
+  // //only gets new page if there is page available
+  // contextData.setPage(contextData.page + 1)
+  //     }
+  //   }
+  //   window.onscroll = function (){
+  //     //check if we scrolled to bottom
+  //     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+  //       scrolledToEnd();
+
+  //     }
+  //   }
 
   return (
     <>
-    {
-     contextData.loading === true   ? <div  className="flex flex-col items-center mt-12 "><FidgetSpinner className="" />
-    <h1 className={`text-2xl font-bold mt-4 ${contextData.theme === 'dark' ? "text-white" : ""}`}>Loading...</h1>
-    </div> : 
-    (<>
-    
-      <h2 className="text-center text-4xl bg-gray-900 p-1 text-white">
-        {contextData.heading}
-      </h2>
-      <div>
-      <div className="p-10 place-items-center grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 ">
-        {contextData.movie.length === 0 ? (
-          <>
-            {loading_spinner}{" "}
-            <h2 className="text-4xl text-center">No results...</h2>{" "}
-            {loading_spinner}
-          </>
-        ) :   ( 
+      {contextData.loading === true ? (
+        <div className="flex flex-col items-center mt-12 ">
+          <FidgetSpinner className="" />
+          <h1
+            className={`text-2xl font-bold mt-4 ${
+              contextData.theme === "dark" ? "text-white" : ""
+            }`}
+          >
+            Loading...
+          </h1>
+        </div>
+      ) : (
         <>
-          {contextData.movie.map((element) => {
-            return <Card key={element.id} movieArrayData={element} />;
-          })}
-          
-        
+          <h2 className="text-center text-4xl bg-gray-900 p-1 text-white">
+            {contextData.heading}
+          </h2>
+          <div>
+            <div className="">
+              {contextData.movie.length === 0 ? (
+                <>
+                  {loading_spinner}{" "}
+                  <h2 className="text-4xl text-center">No results...</h2>{" "}
+                  {loading_spinner}
+                </>
+              ) : (
+                <InfiniteScroll
+                  dataLength={contextData.movie.length} //This is important field to render the next data
+                  //
+                  next={() => {
+                    contextData.setPage(contextData.page + 1);
+                  }}
+                  hasMore={contextData.page !== contextData.totalPages}
+                  loader={<h4>Loading...</h4>}
+                  endMessage={
+                    <p style={{ textAlign: "center" }}>
+                      <b>Yay! You have seen it all</b>
+                    </p>
+                  }
+                  className="p-10 place-items-center grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 "
+                >
+                  {contextData.movie.map((element) => {
+                    return <Card key={element.id} movieArrayData={element} />;
+                  })}
+                </InfiniteScroll>
+              )}
+            </div>
+            {
+              //now we don't need pagination anymore
+              /* <Pagination /> */
+            }
+          </div>
         </>
-        )
-        
-        
-      }
-      </div>
-      {
-        //now we don't need pagination anymore
-      /* <Pagination /> */}
-      </div>
-    </>)}
-
+      )}
     </>
   );
 };

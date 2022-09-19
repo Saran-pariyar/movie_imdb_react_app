@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import {
     AiOutlineTwitter,
     AiFillLinkedin,
@@ -30,7 +31,7 @@ const Footer = () => {
         },
       ];
   return (
-    <footer className=" text-gray-600 body-font relative top-full">
+    <footer className=" text-gray-600 body-font relative top-full" id="footer">
       <div className="container px-5 py-4 mx-auto flex items-center sm:flex-row flex-col">
         <span className="flex title-font font-medium items-center md:justify-start justify-center text-emerald-700">
           <span className="ml-3 text-xl">MoviesGo</span>
