@@ -32,15 +32,15 @@ const Header = () => {
       href_link: "https://www.facebook.com/saran.pariyar.50",
     },
   ];
-  const contextData = useContext(MovieContext);
+  const {theme,setTheme} = useContext(MovieContext);
 
 const themeChanger = ()=>{
-  contextData.theme === 'light' ? contextData.setTheme('dark') : contextData.setTheme('light');
+   theme === 'light' ?  setTheme('dark') :  setTheme('light');
 }
   return (
     <div className="text-white bg-neutral-900 text-xl p-2">
       <div className="flex place-content-around">
-        {contextData.theme === 'light' ? <TbSun className="text-2xl cursor-pointer"  onClick={themeChanger} /> : <TbSunOff className="text-2xl cursor-pointer" onClick={themeChanger} /> }
+        { theme === 'light' ? <TbSun className="text-2xl cursor-pointer"  onClick={themeChanger} /> : <TbSunOff className="text-2xl cursor-pointer" onClick={themeChanger} /> }
         
         <div className="flex self-center font1-5">
           <p className="hidden find-me-text sm:block">Find me : </p>

@@ -5,7 +5,7 @@ import { AiFillStar } from "react-icons/ai";
 import { FidgetSpinner } from "react-loader-spinner";
 
 const MovieDetail = () => {
-  const contextData = useContext(MovieContext);
+  const {api_key,theme} = useContext(MovieContext);
   const [movieFullDetail, setMovieFullDetail] = useState({});
   const { movie_id } = useParams();
   const API_IMG = "https://image.tmdb.org/t/p/w500/";
@@ -13,7 +13,7 @@ const MovieDetail = () => {
   useEffect(() => {
     const fetch_movie_detail = () => {
       fetch(
-        `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${contextData.api_key}`
+        `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${api_key}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -23,7 +23,7 @@ const MovieDetail = () => {
     fetch_movie_detail();
   }, [movieFullDetail]);
 //get similar movies : 
-//  const get_similar_movies = `https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${contextData.api_key}`
+//  const get_similar_movies = `https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${ api_key}`
 
 
   //to get only one digit after point cause it returns like this : 8.345
@@ -99,7 +99,7 @@ const MovieDetail = () => {
                   <span className="title-font font-medium text-2xl ">
                     Get movie
                   </span>
-                  <a target="_blank" href={`https://www.imdb.com/title/${movieFullDetail.imdb_id}`} className={`flex ml-auto  border-0 py-2 px-6 focus:outline-none rounded ${contextData.theme === 'dark' ?  "text-white bg-black hover:bg-slate-800 ": "text-white bg-blue-700 hover:bg-indigo-600"}`}>
+                  <a target="_blank" href={`https://www.imdb.com/title/${movieFullDetail.imdb_id}`} className={`flex ml-auto  border-0 py-2 px-6 focus:outline-none rounded ${ theme === 'dark' ?  "text-white bg-black hover:bg-slate-800 ": "text-white bg-blue-700 hover:bg-indigo-600"}`}>
                     View in IMDB
                   </a>
                 </div>
@@ -113,7 +113,7 @@ const MovieDetail = () => {
         
       </div> */}
     </> : <div  className="flex flex-col items-center mt-12 ">{spinner}
-    <h1 className={`text-2xl font-bold mt-4 ${contextData.theme === 'dark' ? "text-white" : ""}`}>Loading...</h1>
+    <h1 className={`text-2xl font-bold mt-4 ${ theme === 'dark' ? "text-white" : ""}`}>Loading...</h1>
     </div> }
   
   </>

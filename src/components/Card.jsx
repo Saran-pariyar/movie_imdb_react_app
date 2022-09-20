@@ -6,7 +6,7 @@ import { MovieContext } from "../Contexts/MovieContext";
 
 const Card = ({ movieArrayData }) => {
   const API_IMG = "https://image.tmdb.org/t/p/w500";
-  const contextData = useContext(MovieContext);
+  const {theme} = useContext(MovieContext);
 
   const loading_spinner = (
     <div className="flex justify-center">
@@ -35,7 +35,7 @@ navigate(`/movie_detail/${movie_id}`);
 }
   return (
     <div className="grid-col-3 ">
-    <div className={`rounded overflow-hidden shadow-lg h-fit ${contextData.theme === 'dark' ? 'bg-stone-900 text-white' : ""}`}>
+    <div className={`rounded overflow-hidden shadow-lg h-fit ${ theme === 'dark' ? 'bg-stone-900 text-white' : ""}`}>
       {status ? (
         <img
           className="h-3/4 "
@@ -49,17 +49,17 @@ navigate(`/movie_detail/${movie_id}`);
         <div className="font-bold text-xl m-3 text-center ">
           {movieArrayData.title.length > 20 ? movieArrayData.title.slice(0,20) + "..." : movieArrayData.title }
         </div>
-        <p className={`text-gray-700 ${contextData.theme === 'dark' ? "text-slate-100" : ""} text-center`}>
+        <p className={`text-gray-700 ${ theme === 'dark' ? "text-slate-100" : ""} text-center`}>
           {!movieArrayData
             ? loading_spinner
             : movieArrayData.overview.slice(0, 60)+"... "}
         </p>
       </div>
       <div className="px-6 pt-4 pb-2 flex justify-center">
-        <span className={`inline-block  rounded-full px-2 py-1 text-sm font-semibold  mr-1 mb-2 ${contextData.theme === 'dark' ? " bg-gray-700 text-gray-200" : "bg-gray-200 text-gray-700"}`}>
+        <span className={`inline-block  rounded-full px-2 py-1 text-sm font-semibold  mr-1 mb-2 ${ theme === 'dark' ? " bg-gray-700 text-gray-200" : "bg-gray-200 text-gray-700"}`}>
           Lang: {movieArrayData.original_language}
         </span>
-        <span className={`inline-block ${contextData.theme === 'dark' ? " bg-gray-700 text-gray-200" : "bg-gray-200 text-gray-700"}  rounded-full px-2 py-1 text-sm font-semibold  mr-1 mb-2`}>
+        <span className={`inline-block ${ theme === 'dark' ? " bg-gray-700 text-gray-200" : "bg-gray-200 text-gray-700"}  rounded-full px-2 py-1 text-sm font-semibold  mr-1 mb-2`}>
           <AiFillStar className="text-amber-400 inline text-xl" />   
            {movieArrayData.vote_average}
         </span>
@@ -67,9 +67,9 @@ navigate(`/movie_detail/${movie_id}`);
       <span className="flex justify-center">
         <button
           onClick={()=>{goToMovieDetail(movieArrayData.id)}}
-          className={`mb-3 text-center w-3/5 font-bol p-1 rounded-lg hover:opacity-75 ${contextData.theme === 'dark' ?  "text-white bg-violet-900 hover:bg-slate-800 ": "text-white bg-blue-700 hover:bg-indigo-600"}`}
+          className={`mb-3 text-center w-3/5 font-bol p-1 rounded-lg hover:opacity-75 ${ theme === 'dark' ?  "text-white bg-violet-900 hover:bg-slate-800 ": "text-white bg-blue-700 hover:bg-indigo-600"}`}
         >
-          {/* ${contextData.theme === 'dark' ? "text-white bg-black hover:bg-slate-800" : " "} */}
+          {/* ${ theme === 'dark' ? "text-white bg-black hover:bg-slate-800" : " "} */}
           More Details
         </button>
       </span>
