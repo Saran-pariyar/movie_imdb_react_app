@@ -10,7 +10,7 @@ const About = () => {
     "Working with external API",
     "context API & useContext",
     "React-router-domv6",
-    "Pagination",
+    "Pagination & Infinite scrolling",
     "Reusing code/components",
     "Using EndPoints in API calls",
     "useEffect & useNavigate hooks",

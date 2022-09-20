@@ -24,7 +24,7 @@ const Search = () => {
           <input
             type="search"
             id="default-search"
-            className={`text-xl block p-4 pl-10 w-full  rounded-lg border  focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-700  dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 ${contextData.theme === 'dark' ? " bg-gray-800 border-slate-500 tex-white" : "bg-gray-50 border-gray-300 text-slate-700"} `}
+            className={`text-xl block p-4 pl-10 w-full  rounded-lg border  focus:ring-blue-500 focus:border-blue-500    dark:focus:ring-blue-500 dark:focus:border-blue-500 ${contextData.theme === 'dark' ? " bg-gray-800 border-slate-500 tex-white" : "bg-gray-50 border-gray-300 text-slate-700 dark:text-black dark:border-gray-600 dark:placeholder-gray-700"} `}
             placeholder="Search movies"
             required
             onChange={onChangeHandler}

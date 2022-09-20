@@ -57,7 +57,6 @@ const Result = () => {
             {contextData.heading}
           </h2>
           <div>
-            <div className="">
               {contextData.movie.length === 0 ? (
                 <>
                   {loading_spinner}{" "}
@@ -72,20 +71,21 @@ const Result = () => {
                     contextData.setPage(contextData.page + 1);
                   }}
                   hasMore={contextData.page !== contextData.totalPages}
-                  loader={<h4>Loading...</h4>}
+                  loader={loading_spinner}
                   endMessage={
-                    <p style={{ textAlign: "center" }}>
-                      <b>Yay! You have seen it all</b>
+                    <p className="text-center">
+                      <b>That's all :)</b>
                     </p>
                   }
-                  className="p-10 place-items-center grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 "
+                  className=" "
                 >
+                      <div className="p-10 place-items-center grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
                   {contextData.movie.map((element) => {
                     return <Card key={element.id} movieArrayData={element} />;
                   })}
+                  </div>
                 </InfiniteScroll>
               )}
-            </div>
             {
               //now we don't need pagination anymore
               /* <Pagination /> */
