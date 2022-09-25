@@ -14,6 +14,7 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import MovieDetail from "./components/MovieDetail";
+import Hero from "./components/Hero";
 
 function App() {
   //contains array of the movie result
@@ -95,6 +96,7 @@ function App() {
               element={
                 <>
                   <Search />
+                  <Hero />
                   <Result />
                 </>
               }
@@ -105,6 +107,7 @@ function App() {
               element={
                 <>
                   <Search />
+                  <Hero />
                   <Result />
                 </>
               }

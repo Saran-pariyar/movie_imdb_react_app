@@ -34,7 +34,7 @@ const goToMovieDetail = (movie_id) =>{
 navigate(`/movie_detail/${movie_id}`);
 }
   return (
-    <div className="grid-col-3 ">
+    <div className="grid-col-3 hover:relative top-0  hover:-top-2 hover:cursor-pointer ease-out duration-500">
     <div className={`rounded overflow-hidden shadow-lg h-fit ${ theme === 'dark' ? 'bg-stone-900 text-white' : ""}`}>
       {status ? (
         <img
@@ -45,11 +45,11 @@ navigate(`/movie_detail/${movie_id}`);
       ) : (
         loading_spinner
       )}
-      <div className="px-2 py-0 ">
+      <div className="px-2 py-0">
         <div className="font-bold text-xl m-3 text-center ">
           {movieArrayData.title.length > 20 ? movieArrayData.title.slice(0,20) + "..." : movieArrayData.title }
         </div>
-        <p className={`text-gray-700 ${ theme === 'dark' ? "text-slate-100" : ""} text-center`}>
+        <p className={`text-gray-700  ${ theme === 'dark' ? "text-slate-100" : ""} text-center`}>
           {!movieArrayData
             ? loading_spinner
             : movieArrayData.overview.slice(0, 60)+"... "}
