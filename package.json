@@ -4,6 +4,7 @@
   "homepage": "https://Saran-pariyar.github.io/movie_imdb_react_app",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.7.0",
     "@fontsource/poppins": "^4.5.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
