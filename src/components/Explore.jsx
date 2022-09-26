@@ -2,6 +2,7 @@ import Result from "./Result";
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { MovieContext } from "../Contexts/MovieContext";
+import { Flip, Slide } from "react-reveal";
 
 const Explore = () => {
   const {api_key,setEndpoint,setHeading,setPage,theme} = useContext(MovieContext);
@@ -27,7 +28,8 @@ const Explore = () => {
   };
   return (
     <section className="explore my-3">
-      <h1 className="m-4 text-3xl">Categories </h1>
+      <h1 className="m-4 text-3xl"><Slide left> Categories</Slide> </h1>
+      <Flip top>
       <div className={` my-3 overflow-x-scroll h-32  flex  items-center  border p-2 sm:block sm:h-auto sm:overflow-x-visible sm:border-none ${ theme === 'dark' ? "bg-slate-900" :"bg-slate-400 sm:bg-white"}`}>
         {genres.map((element) => {
           return (
@@ -46,6 +48,7 @@ const Explore = () => {
           );
         })}
       </div>
+      </Flip>
       {showResult ? <Result /> : ""}
     </section>
   );

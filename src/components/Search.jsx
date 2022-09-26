@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { MovieContext } from "../Contexts/MovieContext";
+import Fade from 'react-reveal/Fade';
 
 const Search = () => {
   const {setEndpoint,setHeading,setPage,api_key,theme} = useContext(MovieContext);
@@ -19,6 +20,7 @@ const Search = () => {
   };
   return (
     <div className=" p-4 sm:px-4">
+      <Fade top>
       <form onSubmit={onSearchSubmit}>
         <div className="relative">
           <input
@@ -38,6 +40,7 @@ const Search = () => {
           </button>
         </div>
       </form>
+      </Fade>
     </div>
   );
 };

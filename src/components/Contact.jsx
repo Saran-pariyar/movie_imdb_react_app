@@ -1,6 +1,7 @@
 import { useContext, useRef } from "react";
 import { MovieContext } from "../Contexts/MovieContext";
 import emailjs from "@emailjs/browser";
+import { Fade, Flip } from "react-reveal";
 
 const Contact = () => {
   const { theme } = useContext(MovieContext);
@@ -38,7 +39,9 @@ const Contact = () => {
         theme === "dark" ? "text-white" : "text-gray-600"
       } body-font relative`}
     >
+      
       <div className="container px-5 py-5 mx-auto">
+        <Flip top>
         <div className="flex flex-col text-center w-full mb-8">
           <h1
             className={` ${
@@ -51,12 +54,15 @@ const Contact = () => {
             If you want to connect with me, you can send me an email.
           </p>
         </div>
+        </Flip>
+
         <form
           onSubmit={sendEmail}
           ref={form}
           className="lg:w-1/2 md:w-2/3 mx-auto"
         >
           <div className="flex flex-wrap -m-2">
+      <Flip top>
             <div className="p-2 w-1/2">
               <div className="relative">
                 <label
@@ -113,7 +119,9 @@ const Contact = () => {
                 ></textarea>
               </div>
             </div>
+              </Flip>
             <div className="p-2 w-full">
+              <Fade bottom>
               <button
                 className={`flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg ${
                   theme === "dark"
@@ -124,6 +132,7 @@ const Contact = () => {
               >
                 Submit
               </button>
+              </Fade>
             </div>
           </div>
         </form>

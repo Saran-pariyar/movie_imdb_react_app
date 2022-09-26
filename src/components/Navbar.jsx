@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { MovieContext } from "../Contexts/MovieContext";
+import { Fade } from "react-reveal";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -24,6 +25,8 @@ const Navbar = () => {
   ];
 
   return (
+    <>
+    <Fade left>
     <nav className={`w-full ${theme === 'light' ? "bg-white border border-b-2" : 'bg-stone-800 text-white border-b' }  `}>
       <div className="text-xl justify-between px-3 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
@@ -109,6 +112,8 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+    </Fade>
+    </>
   );
 };
 

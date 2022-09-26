@@ -4,6 +4,7 @@ import Card from "./Card";
 import { FidgetSpinner } from "react-loader-spinner";
 import Pagination from "./Pagination";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Slide } from "react-reveal";
 
 const Result = () => {
   const loading_spinner = (
@@ -38,13 +39,15 @@ const Result = () => {
         </div>
       ) : (
         <>
-          <h2 className="text-center text-4xl bg-gray-900 p-1 text-white">
+          <h2 className="text-center text-4xl bg-gray-900 p-1 text-white font-bold">
+        <Slide left>
             { heading}
+          </Slide>
           </h2>
           <div>
               { movie.length === 0 ? (
                 <>
-                  {loading_spinner}{" "}
+                  {loading_spinner}
                   <h2 className="text-4xl text-center">No results...</h2>{" "}
                   {loading_spinner}
                 </>

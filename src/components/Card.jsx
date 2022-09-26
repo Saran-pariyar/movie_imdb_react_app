@@ -3,6 +3,7 @@ import { AiFillStar } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { MovieContext } from "../Contexts/MovieContext";
+import { Zoom } from "react-reveal";
 
 const Card = ({ movieArrayData }) => {
   const API_IMG = "https://image.tmdb.org/t/p/w500";
@@ -33,7 +34,8 @@ const goToMovieDetail = (movie_id) =>{
 })
 navigate(`/movie_detail/${movie_id}`);
 }
-  return (
+  return (<>
+  <Zoom>
     <div className="grid-col-3 hover:relative top-0  hover:-top-2 hover:cursor-pointer ease-out duration-500">
     <div className={`rounded overflow-hidden shadow-lg h-fit ${ theme === 'dark' ? 'bg-stone-900 text-white' : ""}`}>
       {status ? (
@@ -75,6 +77,8 @@ navigate(`/movie_detail/${movie_id}`);
       </span>
     </div>
     </div>
+    </Zoom>
+    </>
   );
 };
 

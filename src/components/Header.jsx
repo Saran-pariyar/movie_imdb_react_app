@@ -8,6 +8,7 @@ import {
 import { TbSun, TbSunOff } from "react-icons/tb";
 import { useContext } from "react";
 import { MovieContext } from "../Contexts/MovieContext";
+import { Fade } from "react-reveal";
 
 const Header = () => {
   const  social_links = [
@@ -39,6 +40,7 @@ const themeChanger = ()=>{
 }
   return (
     <div className="text-white bg-neutral-900 text-xl p-2">
+      <Fade right>
       <div className="flex place-content-around">
         { theme === 'light' ? <TbSun className="text-2xl cursor-pointer"  onClick={themeChanger} /> : <TbSunOff className="text-2xl cursor-pointer" onClick={themeChanger} /> }
         
@@ -60,6 +62,7 @@ const themeChanger = ()=>{
           })}
         </div>
       </div>
+      </Fade>
     </div>
   );
 };

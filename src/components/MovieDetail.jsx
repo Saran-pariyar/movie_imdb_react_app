@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { MovieContext } from "../Contexts/MovieContext";
 import { AiFillStar } from "react-icons/ai";
 import { FidgetSpinner } from "react-loader-spinner";
+import { Fade } from "react-reveal";
 
 const MovieDetail = () => {
   const {api_key,theme} = useContext(MovieContext);
@@ -55,11 +56,13 @@ const MovieDetail = () => {
         >
           <div className="container px-5 py-24 mx-auto">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
+              <Fade left>
               <img
                 alt="movie_poster"
                 className="lg:w-1/3 w-auto h-auto object-cover object-center rounded"
                 src={API_IMG + movieFullDetail.backdrop_path}
-              />
+              /></Fade>
+              <Fade bottom>
               <div className="lg:w-2/3 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 text-white">
                 <h2 className="text-sm title-font    tracking-widest">
                   {year} <span className="text-xs inline-block py-1 px-1.5 mr-1 leading-none text-center whitespace-nowrap  font-bold bg-amber-800 text-white rounded">{movieFullDetail.status}</span>
@@ -104,6 +107,7 @@ const MovieDetail = () => {
                   </a>
                 </div>
               </div>
+              </Fade>
             </div>
           </div>
         </div>
