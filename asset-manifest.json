@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/movie_imdb_react_app/static/css/main.440adecf.css",
-    "main.js": "/movie_imdb_react_app/static/js/main.6178593b.js",
+    "main.css": "/movie_imdb_react_app/static/css/main.480f46db.css",
+    "main.js": "/movie_imdb_react_app/static/js/main.b9ef8223.js",
     "static/media/hero-img.jpg": "/movie_imdb_react_app/static/media/hero-img.e8d5041e6bfdf76f5ba1.jpg",
     "static/media/poppins-all-400-normal.woff": "/movie_imdb_react_app/static/media/poppins-all-400-normal.6fbfdac99c274b77fe96.woff",
     "static/media/profile.jpeg": "/movie_imdb_react_app/static/media/profile.efb9adbfababc8011707.jpeg",
@@ -9,11 +9,11 @@
     "static/media/poppins-latin-400-normal.woff2": "/movie_imdb_react_app/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
     "static/media/poppins-latin-ext-400-normal.woff2": "/movie_imdb_react_app/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/movie_imdb_react_app/index.html",
-    "main.440adecf.css.map": "/movie_imdb_react_app/static/css/main.440adecf.css.map",
-    "main.6178593b.js.map": "/movie_imdb_react_app/static/js/main.6178593b.js.map"
+    "main.480f46db.css.map": "/movie_imdb_react_app/static/css/main.480f46db.css.map",
+    "main.b9ef8223.js.map": "/movie_imdb_react_app/static/js/main.b9ef8223.js.map"
   },
   "entrypoints": [
-    "static/css/main.440adecf.css",
-    "static/js/main.6178593b.js"
+    "static/css/main.480f46db.css",
+    "static/js/main.b9ef8223.js"
   ]
 }
