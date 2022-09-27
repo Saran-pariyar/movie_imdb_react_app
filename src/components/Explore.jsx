@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { MovieContext } from "../Contexts/MovieContext";
 import { Flip, Slide } from "react-reveal";
+import image from '../assets/avenger_1280.jpg'
 
 const Explore = () => {
   const {api_key,setEndpoint,setHeading,setPage,theme} = useContext(MovieContext);
@@ -33,7 +34,7 @@ const Explore = () => {
       <div className={` mt-3 overflow-x-scroll h-32  flex  items-center  border p-2 sm:block sm:h-auto sm:overflow-x-visible sm:border-none ${ theme === 'dark' ? "bg-slate-900" :"bg-slate-400 sm:bg-white"}`}>
         {genres.map((element) => {
           return (
-            <div key={element.id}>
+            <span key={element.id}>
               <button
                 onClick={() => {
                   onClickHandler(element.id, element.name);
@@ -44,12 +45,12 @@ const Explore = () => {
               >
                 {element.name}
               </button>
-            </div>
+            </span>
           );
         })}
       </div>
       </Flip>
-      {showResult ? <Result /> : <><img src="https://hdwallpaperim.com/wp-content/uploads/2017/08/22/99262-anime-colorful-original_characters.jpg" alt="explore" className="sm:h-auto" /></>}
+      {showResult ? <Result /> : <><img src={image} alt="explore" className="sm:h-auto w-full" /></>}
     </section>
   );
 };
