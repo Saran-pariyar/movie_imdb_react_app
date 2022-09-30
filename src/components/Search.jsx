@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import { MovieContext } from "../Contexts/MovieContext";
 import Fade from 'react-reveal/Fade';
+import Hero from "./Hero";
 
 const Search = () => {
-  const {setEndpoint,setHeading,setPage,api_key,theme} = useContext(MovieContext);
+  const {setEndpoint,setHeading,setPage,api_key,theme,showHeroImage,setShowHeroImage} = useContext(MovieContext);
   const [query, setQuery] = useState("");
 
   const onSearchSubmit = (e) => {
@@ -13,12 +14,15 @@ const Search = () => {
     );
      setHeading("Results for :" + query);
      setPage(1);
+     //hide hero section image when we search anything
+     setShowHeroImage(false)
   };
   //when we type input in search section
   const onChangeHandler = (e) => {
     setQuery(e.target.value);
   };
   return (
+    <>
     <div className=" p-4 sm:px-4">
       <Fade top>
       <form onSubmit={onSearchSubmit}>
@@ -42,6 +46,11 @@ const Search = () => {
       </form>
       </Fade>
     </div>
+    {
+      showHeroImage && <Hero/>
+    }
+     
+    </>
   );
 };
 

@@ -7,7 +7,7 @@ import { Fade } from "react-reveal";
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const contextData = useContext(MovieContext);
-  const { setEndpoint, api_key, setHeading,theme,setPage } = contextData;
+  const { setEndpoint, api_key, setHeading,theme,setPage,setShowHeroImage } = contextData;
   //we will again make popular movies show when we click Home Link
   const goToHome = () => {
     //this method will close navbar
@@ -15,6 +15,7 @@ const Navbar = () => {
     setPage(1);
     setEndpoint(`movie/popular?api_key=${api_key}`);
     setHeading("Popular movies");
+    setShowHeroImage(true)
   };
   //we added click method in Home link and use if we have click_method, we will use ternary to check
   const nav_items = [
@@ -33,11 +34,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link
               to="/"
-              onClick={() => {
-                setPage(1);
-                setEndpoint(`movie/popular?api_key=${api_key}`);
-                setHeading("Popular movies");
-              }}
+              onClick={goToHome}
               className="text-2xl font-bold"
             >
               MovieGo
@@ -97,6 +94,7 @@ const Navbar = () => {
                         click_method !== undefined
                           ? click_method
                           : () => {
+                            setShowHeroImage(true)
                               setNavbar(!navbar);
                             }
                       }

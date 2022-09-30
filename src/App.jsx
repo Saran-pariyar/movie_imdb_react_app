@@ -14,7 +14,6 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import MovieDetail from "./components/MovieDetail";
-import Hero from "./components/Hero";
 
 function App() {
   //contains array of the movie result
@@ -32,6 +31,8 @@ function App() {
   const [totalPages, setTotalPages] = useState(1);
   const [theme, setTheme] = useState('light')
   const [loading, setLoading] = useState(false)
+  const [showHeroImage,setShowHeroImage] = useState(true)
+
 
   
   useEffect(() => {
@@ -43,9 +44,6 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setLoading(false)
-        //now next page items will concat to previous data
-        // setMovie(movie.concat(data.results));
-        // setReceivedData(data.results);
         if(page === 1){
 
           setMovie(data.results)
@@ -82,7 +80,8 @@ function App() {
           setTotalPages,
           theme,
           setTheme,
-          loading
+          loading,
+          showHeroImage,setShowHeroImage
         }}
       >
         <BrowserRouter >
@@ -96,7 +95,6 @@ function App() {
               element={
                 <>
                   <Search />
-                  <Hero />
                   <Result />
                 </>
               }
@@ -107,7 +105,6 @@ function App() {
               element={
                 <>
                   <Search />
-                  <Hero />
                   <Result />
                 </>
               }
