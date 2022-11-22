@@ -56,7 +56,7 @@ const MovieDetail = () => {
         >
           <div className="container px-5 py-24 mx-auto">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
-              <Fade left>
+              <Fade top>
               <img
                 alt="movie_poster"
                 className="lg:w-1/3 w-auto h-auto object-cover object-center rounded"

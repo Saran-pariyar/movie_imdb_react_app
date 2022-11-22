@@ -17,6 +17,15 @@ const Navbar = () => {
     setHeading("Popular movies");
     setShowHeroImage(true)
   };
+  const logoClick = () =>{
+    if(navbar === true){
+      setNavbar(false)
+    }
+    setPage(1);
+    setEndpoint(`movie/popular?api_key=${api_key}`);
+    setHeading("Popular movies");
+    setShowHeroImage(true)
+  }
   //we added click method in Home link and use if we have click_method, we will use ternary to check
   const nav_items = [
     { title: "Home", link: "/", click_method: goToHome },
@@ -34,7 +43,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link
               to="/"
-              onClick={goToHome}
+              onClick={logoClick}
               className="text-2xl font-bold"
             >
               MovieGo
