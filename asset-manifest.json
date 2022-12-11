@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/movie_imdb_react_app/static/css/main.aa029dec.css",
-    "main.js": "/movie_imdb_react_app/static/js/main.3990b483.js",
+    "main.js": "/movie_imdb_react_app/static/js/main.f5bc9d56.js",
     "static/media/avenger_1280.jpg": "/movie_imdb_react_app/static/media/avenger_1280.786b57a818402e3b2de6.jpg",
     "static/media/hero-img.jpg": "/movie_imdb_react_app/static/media/hero-img.e8d5041e6bfdf76f5ba1.jpg",
     "static/media/poppins-all-400-normal.woff": "/movie_imdb_react_app/static/media/poppins-all-400-normal.6fbfdac99c274b77fe96.woff",
@@ -11,10 +11,10 @@
     "static/media/poppins-latin-ext-400-normal.woff2": "/movie_imdb_react_app/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/movie_imdb_react_app/index.html",
     "main.aa029dec.css.map": "/movie_imdb_react_app/static/css/main.aa029dec.css.map",
-    "main.3990b483.js.map": "/movie_imdb_react_app/static/js/main.3990b483.js.map"
+    "main.f5bc9d56.js.map": "/movie_imdb_react_app/static/js/main.f5bc9d56.js.map"
   },
   "entrypoints": [
     "static/css/main.aa029dec.css",
-    "static/js/main.3990b483.js"
+    "static/js/main.f5bc9d56.js"
   ]
 }
