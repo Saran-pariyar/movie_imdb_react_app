@@ -18,7 +18,7 @@ const Header = () => {
     },
     {
       icon: AiFillLinkedin,
-      href_link: "https://www.linkedin.com/in/saran-pariyar-5078b5217/",
+      href_link: "https://www.linkedin.com/in/Saran-pariyar/",
     },
     {
       icon: AiFillInstagram,
